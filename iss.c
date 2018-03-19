@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include <string.h>
 #include <linux/types.h>
 
 #define ADD 0
@@ -26,8 +27,8 @@
 #define JIN 20
 #define HLT 24
 
-#define TRACE_FILE "mult_table_trace.txt"
-#define SRAM_OUT_FILE "mult_table_sram_out.txt"
+#define TRACE_SUFFIX "_trace.txt"
+#define SRAM_OUT_SUFFIX "_sram_out.txt"
 
 
 #define MEM_SIZE_BITS	(16)
@@ -249,6 +250,7 @@ void execute_instructions() {
 int main(int argc, char *argv[])
 {
 	FILE *fp;
+	char *name, *trace_path, *sram_out_path;
 
 	if (argc != 2){
 		printf("usage: iss bin_file\n");
@@ -261,15 +263,28 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
-	trace = fopen(TRACE_FILE, "wb");
+	name = strtok(argv[1], ".");
+	if (!name) {
+		printf("Error parsing bin filename\n");
+		return -1;
+	} else {
+		trace_path = (char*)malloc(strlen(name) + strlen(TRACE_SUFFIX) + 1);
+		strcpy(trace_path, name);
+		strcat(trace_path, TRACE_SUFFIX);
+		sram_out_path = (char*)malloc(strlen(name) + strlen(SRAM_OUT_SUFFIX));
+		strcpy(sram_out_path, name);
+		strcat(sram_out_path, SRAM_OUT_SUFFIX);
+	}
+
+	trace = fopen(trace_path, "wb");
 	if (!trace) {
-		printf("couldn't open file %s\n", TRACE_FILE);
+		printf("couldn't open file %s\n", trace_path);
 		exit(1);
 	}
 
-	sram_out = fopen(SRAM_OUT_FILE, "wb");
+	sram_out = fopen(sram_out_path, "wb");
 	if (!sram_out) {
-		printf("couldn't open file %s\n", SRAM_OUT_FILE);
+		printf("couldn't open file %s\n", sram_out_path);
 		exit(1);
 	}
 
@@ -280,6 +295,8 @@ int main(int argc, char *argv[])
 	fclose(fp);
 	fclose(trace);
 	fclose(sram_out);
+	free(sram_out_path);
+	free(trace_path);
 
 	return 0;
 }
