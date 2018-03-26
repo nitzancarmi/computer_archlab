@@ -150,22 +150,22 @@ const char* opcode_tostring(int opc)
 	return "UNKNOWN";
 }
 
-void dump_trace(sp_registers_t *spro)
+void dump_trace(sp_registers_t *spro, sp_registers_t *sprn)
 {
-	int inst_cnt = spro->cycle_counter / 6;
+	int inst_cnt = spro->cycle_counter / 6 - 1;
 	FILE *inst_trace;
 
-	inst_trace = fopen("inst_trace.txt", "wb");
+	inst_trace = fopen("inst_trace.txt", "a+");
 	if (!inst_trace) {
 		printf("couldn't open file inst_trace.txt\n");
 		exit(1);
 	}
 
 	fprintf(inst_trace, "--- instruction %d (%04x) @ PC %d (%04x) -----------------------------------------------------------\n",
-		inst_cnt, inst_cnt, spro->pc, spro->pc);
+		inst_cnt, inst_cnt, spro->pc - 1, spro->pc - 1);
 
 	fprintf(inst_trace, "pc = %04x, inst = %08x, opcode = %d (%s), dst = %d, src0 = %d, src1 = %d, immediate = %08x\n",
-		spro->pc, spro->inst, spro->opcode, opcode_tostring(spro->opcode), spro->dst, spro->src0, spro->src1, spro->immediate);
+		spro->pc - 1, spro->inst, spro->opcode, opcode_tostring(spro->opcode), spro->dst, spro->src0, spro->src1, spro->immediate);
 
 	fprintf(inst_trace, "r[0] = %08x r[1] = %08x r[2] = %08x r[3] = %08x\nr[4] = %08x r[5] = %08x r[6] = %08x r[7] = %08x\n",
 		spro->r[0],spro->r[1],spro->r[2],spro->r[3],spro->r[4],spro->r[5],spro->r[6],spro->r[7]);
@@ -173,13 +173,12 @@ void dump_trace(sp_registers_t *spro)
 
 	if (spro->opcode == HLT) {
 		fprintf(inst_trace, "\n>>>>EXEC: HALT at PC %04x <<<<\n",
-			spro->pc);
+			sprn->pc - 1);
 		fprintf(inst_trace, "sim finished at pc %d, %d instructions",
-			spro->pc, inst_cnt);
+			spro->pc - 1, inst_cnt + 1);
 		return;
 	}
 
-	
 	switch(spro->opcode) {
 	case ADD:
 	case SUB:
@@ -190,15 +189,15 @@ void dump_trace(sp_registers_t *spro)
 	case XOR:
 	case LHI:
 		fprintf(inst_trace, "\n>>>>EXEC: R[%d] = %d %s %d <<<<\n\n",
-			spro->dst, spro->r[spro->dst], opcode_tostring(spro->opcode), spro->opcode);
+			sprn->dst, sprn->r[spro->dst], opcode_tostring(sprn->opcode), sprn->opcode);
 		break;
 	case LD:
 		fprintf(inst_trace, "\n>>>>EXEC: R[%d] = MEM[%d] = %08x <<<<\n\n",
-			spro->dst, spro->r[spro->src1], spro->r[spro->dst]);
+			sprn->dst, sprn->r[sprn->src1], sprn->r[spro->dst]);
 		break;
 	case ST:
 		fprintf(inst_trace, "\n>>>>EXEC: MEM[%d] = %08x %s %d <<<<\n\n",
-			spro->alu1, spro->alu0, "ST", spro->opcode);
+			sprn->alu1, sprn->alu0, "ST", sprn->opcode);
 		break;
 
 	case JLT:
@@ -207,7 +206,7 @@ void dump_trace(sp_registers_t *spro)
 	case JNE:
 	case JIN:
 		fprintf(inst_trace, "\n>>>>EXEC: %s %d, %d, %d <<<<\n\n",
-			opcode_tostring(spro->opcode), spro->alu0, spro->alu1, spro->pc);
+			opcode_tostring(sprn->opcode), sprn->alu0, sprn->alu1, sprn->pc);
 		break;
 	default:
 		printf("Unknown opcode\n");
@@ -271,8 +270,9 @@ static void sp_ctl(sp_t *sp)
 		break;
 
 	case CTL_STATE_DEC1:
-		sprn->alu0 = spro->src0;
-		sprn->alu1 = spro->src1;
+		sprn->r[1] = spro->immediate;
+		sprn->alu0 = (spro->src0 == 1) ? spro->immediate : spro->r[spro->src0];
+		sprn->alu1 = (spro->src1 == 1) ? spro->immediate : spro->r[spro->src1];
 		if (spro->opcode == LHI)
 			sprn->alu0 = spro->dst;
 		sprn->ctl_state = CTL_STATE_EXEC0;
@@ -353,7 +353,7 @@ static void sp_ctl(sp_t *sp)
 			break;
 		case ST:
 			llsim_mem_set_datain(sp->sram, spro->alu0, 31, 0);
-			llsim_mem_write(sp->sram, spro->alu1);  
+			llsim_mem_write(sp->sram, spro->alu1);
 			break;
 
 		case JLT:
@@ -362,7 +362,7 @@ static void sp_ctl(sp_t *sp)
 		case JNE:
 		case JIN:
 			if (spro->aluout) {
-				sprn->r[7] = spro->pc;
+				sprn->r[7] = spro->pc - 1;
 				sprn->pc = spro->immediate;
 			}
 			break;
@@ -372,9 +372,11 @@ static void sp_ctl(sp_t *sp)
 			printf("Unknown opcode %d\n", spro->opcode);
 		}
 
-		dump_trace(spro);
-		if (spro->opcode == HLT)
+		dump_trace(spro, sprn);
+		if (spro->opcode == HLT) {
 			dump_sram(sp);
+			llsim_stop();
+		}
 		sprn->ctl_state = (spro->opcode == HLT) ? CTL_STATE_IDLE : CTL_STATE_FETCH0;
 		break;
 	}
@@ -413,8 +415,6 @@ static void sp_generate_sram_memory_image(sp_t *sp, char *program_name)
                         break;
         }
 	sp->memory_image_size = addr;
-
-        fprintf(inst_trace_fp, "program %s loaded, %d lines\n", program_name, addr);
 
 	for (i = 0; i < sp->memory_image_size; i++)
 		llsim_mem_inject(sp->sram, i, sp->memory_image[i], 31, 0);
