@@ -110,11 +110,6 @@ static void sp_reset(sp_t *sp)
 #define JIN 20
 #define HLT 24
 
-static char opcode_name[32][4] = {"ADD", "SUB", "LSF", "RSF", "AND", "OR", "XOR", "LHI",
-				 "LD", "ST", "U", "U", "U", "U", "U", "U",
-				 "JLT", "JLE", "JEQ", "JNE", "JIN", "U", "U", "U",
-				 "HLT", "U", "U", "U", "U", "U", "U", "U"};
-
 static void dump_sram(sp_t *sp)
 {
 	FILE *fp;
@@ -170,7 +165,7 @@ void dump_trace(sp_registers_t *spro)
 		inst_cnt, inst_cnt, spro->pc, spro->pc);
 
 	fprintf(inst_trace, "pc = %04x, inst = %08x, opcode = %d (%s), dst = %d, src0 = %d, src1 = %d, immediate = %08x\n",
-		spro->pc, spro->inst, spro->opcdode, opcode_tostring(spro->opcode), spro->dst, spro->src0, spro->src1, spro->imm);
+		spro->pc, spro->inst, spro->opcode, opcode_tostring(spro->opcode), spro->dst, spro->src0, spro->src1, spro->immediate);
 
 	fprintf(inst_trace, "r[0] = %08x r[1] = %08x r[2] = %08x r[3] = %08x\nr[4] = %08x r[5] = %08x r[6] = %08x r[7] = %08x\n",
 		spro->r[0],spro->r[1],spro->r[2],spro->r[3],spro->r[4],spro->r[5],spro->r[6],spro->r[7]);
@@ -203,7 +198,7 @@ void dump_trace(sp_registers_t *spro)
 		break;
 	case ST:
 		fprintf(inst_trace, "\n>>>>EXEC: MEM[%d] = %08x %s %d <<<<\n\n",
-			spro->alu1, spro->alu0, "ST", spro->opc);
+			spro->alu1, spro->alu0, "ST", spro->opcode);
 		break;
 
 	case JLT:
@@ -212,11 +207,10 @@ void dump_trace(sp_registers_t *spro)
 	case JNE:
 	case JIN:
 		fprintf(inst_trace, "\n>>>>EXEC: %s %d, %d, %d <<<<\n\n",
-			opcode_tostring(spro->opc), spro->alu0, spro->alu1, spro->pc);
+			opcode_tostring(spro->opcode), spro->alu0, spro->alu1, spro->pc);
 		break;
 	default:
 		printf("Unknown opcode\n");
-		continue;
 	}
 
 	fclose(inst_trace);
@@ -258,22 +252,22 @@ static void sp_ctl(sp_t *sp)
 
 	case CTL_STATE_FETCH0:
 		llsim_mem_read(sp->sram, spro->pc);
-		sprn->state = CTL_STATE_FETCH1;
+		sprn->ctl_state = CTL_STATE_FETCH1;
 		break;
 
 	case CTL_STATE_FETCH1:
 		sprn->inst = llsim_mem_extract_dataout(sp->sram, 31, 0);
-		sprn->state = CTL_STATE_DEC0;
+		sprn->ctl_state = CTL_STATE_DEC0;
 		break;
 
 	case CTL_STATE_DEC0:
 		sprn->pc = spro->pc + 1;
-		sprn->opc = spro->inst >> 25;
+		sprn->opcode = spro->inst >> 25;
 		sprn->dst = (spro->inst >> 22) & 7;
 		sprn->src0 = (spro->inst >> 19) & 7;
 		sprn->src1 = (spro->inst >> 16) & 7;
-		sprn->imm = spro->inst & 0xffff;
-		sprn->state = CTL_STATE_DEC1;
+		sprn->immediate = spro->inst & 0xffff;
+		sprn->ctl_state = CTL_STATE_DEC1;
 		break;
 
 	case CTL_STATE_DEC1:
@@ -281,7 +275,7 @@ static void sp_ctl(sp_t *sp)
 		sprn->alu1 = spro->src1;
 		if (spro->opcode == LHI)
 			sprn->alu0 = spro->dst;
-		sprn->state = CTL_STATE_EXEC0;
+		sprn->ctl_state = CTL_STATE_EXEC0;
 		break;
 
 	case CTL_STATE_EXEC0:
@@ -308,7 +302,7 @@ static void sp_ctl(sp_t *sp)
 			sprn->aluout = spro->alu0 ^ spro->alu1;
 			break;
 		case LHI:
-			sprn->aluout = (spro->imm << 16) + (spro->alu0 && 0xffff);
+			sprn->aluout = (spro->immediate << 16) + (spro->alu0 && 0xffff);
 			break;
 
 		case LD:
@@ -335,11 +329,10 @@ static void sp_ctl(sp_t *sp)
 		case HLT:
 			break;
 		default:
-			printf("Unknown opcode %d\n", inst->opc);
-			continue;
+			printf("Unknown opcode %d\n", spro->opcode);
 		}
 
-		sprn->state = CTL_STATE_EXEC1;
+		sprn->ctl_state = CTL_STATE_EXEC1;
 		break;
 
 	case CTL_STATE_EXEC1:
@@ -370,18 +363,19 @@ static void sp_ctl(sp_t *sp)
 		case JIN:
 			if (spro->aluout) {
 				sprn->r[7] = spro->pc;
-				sprn->pc = spro->imm;
+				sprn->pc = spro->immediate;
 			}
 			break;
 		case HLT:
 			break;
 		default:
-			printf("Unknown opcode %d\n", inst->opc);
-			continue;
+			printf("Unknown opcode %d\n", spro->opcode);
 		}
 
-		dump_trace(spro)
-		sprn->state = (spro->opcode == HLT) ? CTL_STATE_IDLE : CTL_STATE_FETCH0;
+		dump_trace(spro);
+		if (spro->opcode == HLT)
+			dump_sram(sp);
+		sprn->ctl_state = (spro->opcode == HLT) ? CTL_STATE_IDLE : CTL_STATE_FETCH0;
 		break;
 	}
 }
