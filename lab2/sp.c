@@ -57,6 +57,13 @@ typedef struct sp_registers_s {
 	// 3 bit control state machine state register
 	int ctl_state;
 
+	// DMA registers
+	int dma_raddr;
+	int dma_waddr;
+	int dma_reg;
+	int dma_cnt;
+	int dma_state;
+
 	// control states
 	#define CTL_STATE_IDLE		0
 	#define CTL_STATE_FETCH0	1
@@ -65,6 +72,11 @@ typedef struct sp_registers_s {
 	#define CTL_STATE_DEC1		4
 	#define CTL_STATE_EXEC0		5
 	#define CTL_STATE_EXEC1		6
+
+	#define DMA_STATE_IDLE		0
+	#define DMA_STATE_READ		1
+	#define DMA_STATE_SAMPLE	2
+	#define DMA_STATE_WRITE		3
 } sp_registers_t;
 
 /*
@@ -103,12 +115,20 @@ static void sp_reset(sp_t *sp)
 #define LHI 7
 #define LD 8
 #define ST 9
+#define DMA 10
+#define POL 11
 #define JLT 16
 #define JLE 17
 #define JEQ 18
 #define JNE 19
 #define JIN 20
 #define HLT 24
+
+int dma_enable(sp_registers_t *spro) {
+	return !(spro->ctl_state == CTL_STATE_FETCH0 ||
+			 (spro->ctl_state == CTL_STATE_EXEC0 && spro->opcode == LD) ||
+			 (spro->ctl_state == CTL_STATE_EXEC1 && spro->opcode == ST));
+}
 
 static void dump_sram(sp_t *sp)
 {
@@ -145,6 +165,9 @@ const char* opcode_tostring(int opc)
 	   case JNE: return "JNE";
 	   case JIN: return "JIN";
 	   case HLT: return "HLT";
+
+	   case DMA: return "DMA";
+	   case POL: return "POL";
 	}
 
 	return "UNKNOWN";
@@ -208,6 +231,17 @@ void dump_trace(sp_registers_t *spro, sp_registers_t *sprn)
 		fprintf(inst_trace, "\n>>>>EXEC: %s %d, %d, %d <<<<\n\n",
 			opcode_tostring(sprn->opcode), sprn->alu0, sprn->alu1, sprn->pc);
 		break;
+
+	case POL:
+		fprintf(inst_trace, "\n>>>>EXEC: R[%d] = %d %s %d <<<<\n\n",
+			sprn->dst, sprn->dma_cnt, opcode_tostring(sprn->opcode), sprn->opcode);
+		break;
+	case DMA:
+		fprintf(inst_trace, "\n>>>>EXEC: %s Read = %d, Write = %d, count = %d <<<<\n\n",
+			opcode_tostring(sprn->opcode), sprn->dma_raddr, sprn->dma_waddr, sprn->dma_cnt);
+		break;
+
+
 	default:
 		printf("Unknown opcode\n");
 	}
@@ -238,7 +272,13 @@ static void sp_ctl(sp_t *sp)
 	fprintf(cycle_trace_fp, "alu1 %08x\n", spro->alu1);
 	fprintf(cycle_trace_fp, "aluout %08x\n", spro->aluout);
 	fprintf(cycle_trace_fp, "cycle_counter %08x\n", spro->cycle_counter);
-	fprintf(cycle_trace_fp, "ctl_state %08x\n\n", spro->ctl_state);
+	fprintf(cycle_trace_fp, "ctl_state %08x\n", spro->ctl_state);
+
+	fprintf(cycle_trace_fp, "dma_raddr %08x\n", spro->dma_raddr);
+	fprintf(cycle_trace_fp, "dma_reg %08x\n", spro->dma_reg);
+	fprintf(cycle_trace_fp, "dma_waddr %08x\n", spro->dma_waddr);
+	fprintf(cycle_trace_fp, "dma_cnt %08x\n", spro->dma_cnt);
+	fprintf(cycle_trace_fp, "dma_state %08x\n\n", spro->dma_state);
 
 	sprn->cycle_counter = spro->cycle_counter + 1;
 
@@ -326,6 +366,18 @@ static void sp_ctl(sp_t *sp)
 		case JIN:
 			sprn->aluout = 1;
 			break;
+
+		case DMA:
+			if (spro->dma_state == DMA_STATE_IDLE) {
+				sprn->dma_raddr = spro->alu0;
+				sprn->dma_waddr = spro->alu1;
+				sprn->dma_cnt = spro->immediate;
+				sprn->dma_state = DMA_STATE_READ;
+			}
+			break;
+		case POL:
+			break;
+
 		case HLT:
 			break;
 		default:
@@ -366,6 +418,11 @@ static void sp_ctl(sp_t *sp)
 				sprn->pc = spro->immediate;
 			}
 			break;
+
+		case DMA:
+			break;
+		case POL:
+			sprn->r[spro->dst] = spro->dma_cnt;
 		case HLT:
 			break;
 		default:
@@ -379,6 +436,33 @@ static void sp_ctl(sp_t *sp)
 		}
 		sprn->ctl_state = (spro->opcode == HLT) ? CTL_STATE_IDLE : CTL_STATE_FETCH0;
 		break;
+	}
+
+	if (dma_enable(spro)) {
+		switch (spro->dma_state) {
+		case DMA_STATE_IDLE:
+			break;
+		case DMA_STATE_READ:
+			if (dma_enable(sprn)) {
+				llsim_mem_read(sp->sram, spro->dma_raddr);
+				sprn->dma_state = DMA_STATE_SAMPLE;
+			}
+			break;
+		case DMA_STATE_SAMPLE:
+			sprn->dma_reg = llsim_mem_extract_dataout(sp->sram, 31, 0);
+			sprn->dma_raddr = spro->dma_raddr + 1;
+			sprn->dma_state = DMA_STATE_WRITE;
+			break;
+		case DMA_STATE_WRITE:
+			llsim_mem_set_datain(sp->sram, spro->dma_reg, 31, 0);
+			llsim_mem_write(sp->sram, spro->dma_waddr);
+			sprn->dma_waddr = spro->dma_waddr + 1;
+			sprn->dma_cnt = spro->dma_cnt - 1;
+			sprn->dma_state = (spro->dma_cnt == 1) ? DMA_STATE_IDLE : DMA_STATE_READ;
+			break;
+		default:
+			break;
+		}
 	}
 }
 
