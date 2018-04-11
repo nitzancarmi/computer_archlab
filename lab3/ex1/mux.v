@@ -4,7 +4,7 @@ module mux1(a,b,select,result);
    input select;
    output result;
 
-   assign result = // FILL HERE
+   assign result = (select) ? b : a;
 endmodule
 
 module mux2(a,b,select,result);
@@ -16,6 +16,9 @@ module mux2(a,b,select,result);
    reg result;
    always @(a or b or select)
      begin
-        // FILL HERE
+        if (select)
+			result = b;
+		else
+			result = a;
      end
 endmodule
