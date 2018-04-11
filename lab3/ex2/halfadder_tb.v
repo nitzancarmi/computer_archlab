@@ -1,7 +1,8 @@
 module main;
 reg a,b;
 wire sum, carry;
-req correct;
+reg correct;
+halfadder uut(a, b, sum, carry);
 
 always@(sum or carry)
 begin

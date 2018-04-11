@@ -1,0 +1,52 @@
+$date
+    Apr 11, 2018  14:16:39
+$end
+$version
+    TOOL:	ncsim(64)	14.10-s021
+$end
+$timescale
+    1 ns
+$end
+
+$scope module main $end
+$var reg       1 !    a  $end
+$var reg       1 "    b  $end
+$var wire      1 #    sum  $end
+$var wire      1 $    carry  $end
+$var reg       1 %    correct  $end
+
+$scope module uut $end
+$var wire      1 &    a  $end
+$var wire      1 '    b  $end
+$var wire      1 #    sum  $end
+$var wire      1 $    carry  $end
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+#1
+$dumpvars
+0!
+0"
+0#
+0$
+1%
+0&
+0'
+$end
+#6
+1"
+1'
+1#
+#11
+1!
+0"
+0'
+1&
+#16
+1"
+1'
+1$
+0#
+#21
