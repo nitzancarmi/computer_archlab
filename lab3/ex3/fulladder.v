@@ -1,8 +1,7 @@
-module fulladder( sum, co, a, b, ci);
-
+module fulladder(a, b, ci, sum, co);
   input   a, b, ci;
   output  sum, co;
 
-  // FILL HERE
-
+  assign sum = a^b^ci;
+  assign co = (a&b) | (a&ci) | (b&ci);
 endmodule
