@@ -7,11 +7,12 @@ module    addsub_tb;
     wire co;
     
     // for pattern generation
-    integer a, b, expect, error_num, t;
+    integer a, b, expect, error_num;
     reg overflow;
     wire [3:0] expect_out = expect[3:0];    // compare "expect_out" with "result"
 
     addsub as(result, operand_a, operand_b, mode);
+    assign co = overflow;
 
     // give stimulus pattern
     initial begin
