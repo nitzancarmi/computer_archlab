@@ -3,6 +3,6 @@ module halfadder(a,b,sum,carry);
   output sum, carry;
   wire sum, carry;
 
-  xor g0(/* FILL HERE */);
-  and g1(/* FILL HERE */);
+  assign sum = a^b;
+  assign carry = a&b;
 endmodule

@@ -1,7 +1,7 @@
 module main;
 reg a,b;
 wire sum, carry;
-halfadder // FILL HERE
+req correct;
 
 always@(sum or carry)
 begin
@@ -10,16 +10,18 @@ end
 
 initial
 begin
+#1;
+correct = 1;
 $dumpfile("waves.vcd");
 $dumpvars;
 a = 0; b = 0;
-#5
+#5 correct = correct & (a+b == {carry, sum});
 a = 0; b = 1;
-#5
+#5 correct = correct & (a+b == {carry, sum});
 a = 1; b = 0;
-#5
+#5 correct = correct & (a+b == {carry, sum});
 a = 1; b = 1;
-#5
+#5 correct = correct & (a+b == {carry, sum});
 $finish;
 end
 endmodule
