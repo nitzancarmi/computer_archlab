@@ -3,7 +3,6 @@ module parity(clk, in, reset, out);
    input clk, in, reset;
    output out;
 
-   reg 	  out;
    reg 	  state;
 
    parameter zero=0, one=1;
@@ -14,15 +13,12 @@ module parity(clk, in, reset, out);
 	  state <= zero;
 	else
 	  case (state)
-	    // FILL HERE
+          0: state <= in;
+          1: state <= ~in;
+          default: state <= 0;
 	  endcase
      end
 
-   always @(state) 
-     begin
-	case (state)
-	    // FILL HERE
-	endcase
-     end
+  assign out = state;
 
 endmodule
