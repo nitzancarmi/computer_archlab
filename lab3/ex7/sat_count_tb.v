@@ -3,11 +3,11 @@ module main;
    wire prediction;
    reg correct;
 
-   sat_count(.clk(clk),
-            .reset(reset),
-            .branch(branch),
-            .taken(taken)
-            .prediction(prediction));
+   sat_count uut(.clk(clk),
+                 .reset(reset),
+                 .branch(branch),
+                 .taken(taken),
+                 .prediction(prediction));
 
    always #5 clk = ~clk;
 
@@ -20,7 +20,7 @@ module main;
         reset = 1;
         branch = 0;
         taken = 0;
-        prediction = 0;
+        //prediction = 0;
 
 	//reset really reset
         #10;
