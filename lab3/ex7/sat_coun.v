@@ -2,15 +2,15 @@
 
 module sat_count(clk, reset, branch, taken, prediction);
    parameter N=2;
-   reg [N-1:0] counter_o = 0;
-   wire [N-1:0] counter_n;
-   wire [3:0] counter_n4 = { {(4-N){counter_n[N-1]}}, counter_n[N-1:0] };
+   reg [3:0] max = {N{1'b1}};
+   reg [3:0] counter_o;
+   wire [3:0] counter_n;
 
    input clk, reset, branch, taken;
    output prediction;
 
-   addsub add0(.result(counter_n4),
-	       .operand_a({ {(4-N){counter_o[N-1]}}, counter_o[N-1:0] }),
+   addsub add0(.result(counter_n),
+	       .operand_a(counter_o),
 	       .operand_b(4'b1),
                .mode(~taken));
 
@@ -24,7 +24,7 @@ module sat_count(clk, reset, branch, taken, prediction);
           else
 	    case (taken)
                0: counter_o <= (counter_o == 0) ? 0 : counter_n;
-               1: counter_o <= (counter_o == -1) ? -1 : counter_n;
+               1: counter_o <= (counter_o == max) ? max : counter_n;
                default: counter_o <= counter_n;
 	    endcase
         end
