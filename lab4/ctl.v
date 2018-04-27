@@ -156,21 +156,35 @@ module CTL(
                 ctl_state <= `CTL_STATE_EXEC0;
              end
 	     `CTL_STATE_EXEC0: begin
-	   	if (ctl_state == `LD) begin
-		   _sram_ADDR <= alu1;
-		end
+	        case (opcode)
+	          `ADD: aluout <= aluout_wire; 
+	          `SUB: aluout <= aluout_wire; 
+	          `LSF: aluout <= aluout_wire;
+	          `RSF: aluout <= aluout_wire;
+	          `AND: aluout <= aluout_wire;
+	          `OR:  aluout <= aluout_wire;
+	          `XOR: aluout <= aluout_wire;
+	          `LHI: aluout <= aluout_wire;
+
+	          `LD: _sram_ADDR <= alu1; 
+	          `JLT: aluout <= aluout_wire; 
+	          `JLE: aluout <= aluout_wire; 
+	          `JEQ: aluout <= aluout_wire; 
+	          `JNE: aluout <= aluout_wire; 
+	          `JIN: aluout <= aluout_wire; 
+	        endcase
                 ctl_state <= `CTL_STATE_EXEC1;
              end
 	     `CTL_STATE_EXEC1: begin
 	        case (opcode)
-	          `ADD: r[dst] <= aluout_wire;  
-	          `SUB: r[dst] <= aluout_wire;  
-	          `LSF: r[dst] <= aluout_wire; 
-	          `RSF: r[dst] <= aluout_wire; 
-	          `AND: r[dst] <= aluout_wire; 
-	          `OR:  r[dst] <= aluout_wire; 
-	          `XOR: r[dst] <= aluout_wire; 
-	          `LHI: r[dst] <= aluout_wire; 
+	          `ADD: r[dst] <= aluout;  
+	          `SUB: r[dst] <= aluout;  
+	          `LSF: r[dst] <= aluout; 
+	          `RSF: r[dst] <= aluout; 
+	          `AND: r[dst] <= aluout; 
+	          `OR:  r[dst] <= aluout; 
+	          `XOR: r[dst] <= aluout; 
+	          `LHI: r[dst] <= aluout; 
 
 	          `LD:  begin
 	        	  r[dst] <= sram_DO;
@@ -180,31 +194,31 @@ module CTL(
 	        	  _sram_ADDR <= alu1;
 	                end
 	          `JLT: begin 
-	          	  if (aluout_wire == 1) begin
+	          	  if (aluout == 1) begin
                              r[7] <= pc - 1;
 	        	     pc <= immediate;
 	        	  end
 	        	end
 	          `JLE: begin 
-	          	  if (aluout_wire == 1) begin
+	          	  if (aluout == 1) begin
                              r[7] <= pc - 1;
 	        	     pc <= immediate;
 	        	  end
 	        	end
 	          `JEQ: begin 
-	          	  if (aluout_wire == 1) begin
+	          	  if (aluout == 1) begin
                              r[7] <= pc - 1;
 	        	     pc <= immediate;
 	        	  end
 	        	end
 	          `JNE: begin 
-	          	  if (aluout_wire == 1) begin
+	          	  if (aluout == 1) begin
                              r[7] <= pc - 1;
 	        	     pc <= immediate;
 	        	  end
 	        	end
 	          `JIN: begin 
-	          	  if (aluout_wire == 1) begin
+	          	  if (aluout == 1) begin
                              r[7] <= pc - 1;
 	        	     pc <= immediate;
 	        	  end
