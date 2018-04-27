@@ -55,9 +55,6 @@ module CTL(
    reg [31:0] 	 cycle_counter;
    reg [2:0] 	 ctl_state;
 
-   reg [15:0]    _sram_ADDR = 0;
-   reg [31:0]    _sram_DI = 0;
-
    integer 	 verilog_trace_fp, rc;
 
    initial
@@ -68,13 +65,19 @@ module CTL(
      assign sram_EN = (ctl_state == `CTL_STATE_FETCH0) | ((ctl_state == `CTL_STATE_EXEC0) & (opcode == `LD)) | 
 	              ((ctl_state == `CTL_STATE_EXEC1) & (opcode == `ST));
      assign sram_WE = ((ctl_state == `CTL_STATE_EXEC1) & (opcode == `ST));
-     assign sram_ADDR = _sram_ADDR;
-     assign sram_DI = _sram_DI;
-   /***********************************
-    * set up sram inputs (outputs from sp)
-    * 
-    * TODO: fill here
-    **********************************/
+
+     always @(ctl_state, opcode, pc, alu1, alu0)
+       begin
+          if (ctl_state == `CTL_STATE_FETCH0)
+		  sram_ADDR <= pc;
+	  if ((ctl_state == `CTL_STATE_EXEC0) & (opcode == `LD))
+		  sram_ADDR <= alu1;
+	  if ((ctl_state == `CTL_STATE_EXEC1) & (opcode == `ST))
+	  begin
+		  sram_ADDR <= alu1;
+	          sram_DI <= alu0;
+	  end
+       end
 
    // synchronous instructions
    always@(posedge clk)
@@ -132,7 +135,6 @@ module CTL(
                   ctl_state <= `CTL_STATE_FETCH0;
              end
 	     `CTL_STATE_FETCH0: begin
-		_sram_ADDR <= pc;
                 ctl_state <= `CTL_STATE_FETCH1;
              end
 	     `CTL_STATE_FETCH1: begin
@@ -166,7 +168,6 @@ module CTL(
 	          `XOR: aluout <= aluout_wire;
 	          `LHI: aluout <= aluout_wire;
 
-	          `LD: _sram_ADDR <= alu1; 
 	          `JLT: aluout <= aluout_wire; 
 	          `JLE: aluout <= aluout_wire; 
 	          `JEQ: aluout <= aluout_wire; 
@@ -189,10 +190,6 @@ module CTL(
 	          `LD:  begin
 	        	  r[dst] <= sram_DO;
 	        	end
-	          `ST:  begin
-	        	  _sram_DI <= alu0;
-	        	  _sram_ADDR <= alu1;
-	                end
 	          `JLT: begin 
 	          	  if (aluout == 1) begin
                              r[7] <= pc - 1;
