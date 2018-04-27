@@ -55,8 +55,6 @@ module CTL(
    reg [31:0] 	 cycle_counter;
    reg [2:0] 	 ctl_state;
 
-   reg		 _sram_EN = 0;
-   reg		 _sram_WE = 0;
    reg [15:0]    _sram_ADDR = 0;
    reg [31:0]    _sram_DI = 0;
 
@@ -67,8 +65,9 @@ module CTL(
 	verilog_trace_fp = $fopen("verilog_trace.txt", "w");
      end
 
-     assign sram_EN = _sram_EN;
-     assign sram_WE = _sram_WE;
+     assign sram_EN = (ctl_state == `CTL_STATE_FETCH0) | ((ctl_state == `CTL_STATE_EXEC0) & (opcode == `LD)) | 
+	              ((ctl_state == `CTL_STATE_EXEC1) & (opcode == `ST));
+     assign sram_WE = ((ctl_state == `CTL_STATE_EXEC1) & (opcode == `ST));
      assign sram_ADDR = _sram_ADDR;
      assign sram_DI = _sram_DI;
    /***********************************
@@ -129,19 +128,16 @@ module CTL(
 	   case (ctl_state)
 	     `CTL_STATE_IDLE: begin
                 pc <= 0;
-	        _sram_EN <= 0;
 	        _sram_WE <= 0;
                 if (start)
                   ctl_state <= `CTL_STATE_FETCH0;
              end
 	     `CTL_STATE_FETCH0: begin
-		_sram_EN <= 1;
 	        _sram_WE <= 0;
 		_sram_ADDR <= pc;
                 ctl_state <= `CTL_STATE_FETCH1;
              end
 	     `CTL_STATE_FETCH1: begin
-		_sram_EN <= 0;
 		inst <= sram_DO;
                 ctl_state <= `CTL_STATE_DEC0;
              end
@@ -163,7 +159,6 @@ module CTL(
              end
 	     `CTL_STATE_EXEC0: begin
 	   	if (ctl_state == `LD) begin
-		   _sram_EN <= 1;
 		   _sram_ADDR <= alu1;
 		end
                 ctl_state <= `CTL_STATE_EXEC1;
@@ -181,12 +176,10 @@ module CTL(
 
 	          `LD:  begin
 	        	  r[dst] <= sram_DO;
-	        	  _sram_EN <= 0;
 	        	end
 	          `ST:  begin
 	        	  _sram_DI <= alu0;
 	        	  _sram_ADDR <= alu1;
-	        	  _sram_EN <= 1;
 	        	  _sram_WE <= 1;
 	                end
 	          `JLT: begin 
