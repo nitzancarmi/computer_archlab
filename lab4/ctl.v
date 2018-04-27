@@ -54,6 +54,8 @@ module CTL(
    reg [31:0] 	 immediate;
    reg [31:0] 	 cycle_counter;
    reg [2:0] 	 ctl_state;
+   reg [15:0] sram_ADDR;
+   reg [31:0] sram_DI;
 
    integer 	 verilog_trace_fp, rc;
 
