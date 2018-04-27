@@ -27,11 +27,11 @@ module SRAM(clk, addr, di, en, we, do);
 	if (en) begin
 	   if (we) begin
 	      mem[addr] <= di;
-	      $display("time %0d: write %08x -> mem[%04x]", $time, di, addr);
+//	      $display("time %0d: write %08x -> mem[%04x]", $time, di, addr);
 	   end
 	   else begin
 	      do <= mem[addr];
-	      $display("time %0d: read mem[%04x] -> %08x", $time, addr, mem[addr]);
+//	      $display("time %0d: read mem[%04x] -> %08x", $time, addr, mem[addr]);
 	   end
 	end
      end

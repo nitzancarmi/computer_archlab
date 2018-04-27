@@ -128,12 +128,10 @@ module CTL(
 	   case (ctl_state)
 	     `CTL_STATE_IDLE: begin
                 pc <= 0;
-	        _sram_WE <= 0;
                 if (start)
                   ctl_state <= `CTL_STATE_FETCH0;
              end
 	     `CTL_STATE_FETCH0: begin
-	        _sram_WE <= 0;
 		_sram_ADDR <= pc;
                 ctl_state <= `CTL_STATE_FETCH1;
              end
@@ -180,7 +178,6 @@ module CTL(
 	          `ST:  begin
 	        	  _sram_DI <= alu0;
 	        	  _sram_ADDR <= alu1;
-	        	  _sram_WE <= 1;
 	                end
 	          `JLT: begin 
 	          	  if (aluout_wire == 1) begin
