@@ -14,10 +14,13 @@ module ALU(opcode, alu0, alu1, aluout);
      begin
 	case (opcode)
 	  `ADD: aluout = alu0 + alu1;
-	  /***********************************
-           * TODO: fill here
-           **********************************/
-
+	  `SUB: aluout = alu0 - alu1;
+	  `LSF: aluout = alu0 << alu1;
+	  `RSF: aluout = alu0 >> alu1;
+	  `AND: aluout = alu0 & alu1;
+	  `OR:  aluout = alu0 | alu1;
+	  `XOR: aluout = alu0 ^ alu1;
+	  `LHI: aluout = (alu0 << 16) + (aluout &  {16{1'b1}});
 	endcase
      end
 endmodule // alu
