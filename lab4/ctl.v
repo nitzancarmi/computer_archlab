@@ -142,7 +142,7 @@ module CTL(
              end
 	     `CTL_STATE_FETCH1: begin
 		_sram_EN <= 0;
-		inst <= sram_DO
+		inst <= sram_DO;
                 ctl_state <= `CTL_STATE_DEC0;
              end
 	     `CTL_STATE_DEC0: begin
