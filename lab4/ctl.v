@@ -35,12 +35,13 @@ module CTL(
    output [4:0]  opcode;
 
    // registers
-   reg [31:0] 	 r2;
-   reg [31:0] 	 r3;
-   reg [31:0] 	 r4;
-   reg [31:0] 	 r5;
-   reg [31:0] 	 r6;
-   reg [31:0] 	 r7;
+   reg [31:0] 	 r[0:7];
+//   reg [31:0] 	 r2;
+//   reg [31:0] 	 r3;
+//   reg [31:0] 	 r4;
+//   reg [31:0] 	 r5;
+//   reg [31:0] 	 r6;
+//   reg [31:0] 	 r7;
    reg [15:0] 	 pc;
    reg [31:0] 	 inst;
    reg [4:0] 	 opcode;
@@ -54,6 +55,11 @@ module CTL(
    reg [31:0] 	 cycle_counter;
    reg [2:0] 	 ctl_state;
 
+   reg		 _sram_EN = 0;
+   reg		 _sram_WE = 0;
+   reg [15:0]    _sram_ADDR = 0;
+   reg [31:0]    _sram_DI = 0;
+
    integer 	 verilog_trace_fp, rc;
 
    initial
@@ -61,6 +67,10 @@ module CTL(
 	verilog_trace_fp = $fopen("verilog_trace.txt", "w");
      end
 
+     assign sram_EN = _sram_EN;
+     assign sram_WE = _sram_WE;
+     assign sram_ADDR = _sram_ADDR;
+     assign sram_DI = _sram_DI;
    /***********************************
     * set up sram inputs (outputs from sp)
     * 
@@ -72,12 +82,14 @@ module CTL(
      begin
 	if (reset) begin
 	   // registers reset
-	   r2 <= 0;
-	   r3 <= 0;
-	   r4 <= 0;
-	   r5 <= 0;
-	   r6 <= 0;
-	   r7 <= 0;
+	   r[0] <= 0;
+	   r[1] <= 0;
+	   r[2] <= 0;
+	   r[3] <= 0;
+	   r[4] <= 0;
+	   r[5] <= 0;
+	   r[6] <= 0;
+	   r[7] <= 0;
 	   pc <= 0;
 	   inst <= 0;
 	   opcode <= 0;
@@ -94,12 +106,12 @@ module CTL(
 	end else begin
 	   // generate cycle trace
 	   $fdisplay(verilog_trace_fp, "cycle %0d", cycle_counter);
-	   $fdisplay(verilog_trace_fp, "r2 %08x", r2);
-	   $fdisplay(verilog_trace_fp, "r3 %08x", r3);
-	   $fdisplay(verilog_trace_fp, "r4 %08x", r4);
-	   $fdisplay(verilog_trace_fp, "r5 %08x", r5);
-	   $fdisplay(verilog_trace_fp, "r6 %08x", r6);
-	   $fdisplay(verilog_trace_fp, "r7 %08x", r7);
+	   $fdisplay(verilog_trace_fp, "r2 %08x", r[2]);
+	   $fdisplay(verilog_trace_fp, "r3 %08x", r[3]);
+	   $fdisplay(verilog_trace_fp, "r4 %08x", r[4]);
+	   $fdisplay(verilog_trace_fp, "r5 %08x", r[5]);
+	   $fdisplay(verilog_trace_fp, "r6 %08x", r[6]);
+	   $fdisplay(verilog_trace_fp, "r7 %08x", r[7]);
 	   $fdisplay(verilog_trace_fp, "pc %08x", pc);
 	   $fdisplay(verilog_trace_fp, "inst %08x", inst);
 	   $fdisplay(verilog_trace_fp, "opcode %08x", opcode);
@@ -117,12 +129,99 @@ module CTL(
 	   case (ctl_state)
 	     `CTL_STATE_IDLE: begin
                 pc <= 0;
+	        _sram_EN <= 0;
+	        _sram_WE <= 0;
                 if (start)
                   ctl_state <= `CTL_STATE_FETCH0;
              end
-             /***********************************
-              * TODO: fill here
-              **********************************/
+	     `CTL_STATE_FETCH0: begin
+		_sram_EN <= 1;
+	        _sram_WE <= 0;
+		_sram_ADDR <= pc;
+                ctl_state <= `CTL_STATE_FETCH1;
+             end
+	     `CTL_STATE_FETCH1: begin
+		_sram_EN <= 0;
+		inst <= sram_DO
+                ctl_state <= `CTL_STATE_DEC0;
+             end
+	     `CTL_STATE_DEC0: begin
+		pc <= pc + 1;
+		opcode <= inst >> 25;
+		dst <= (inst >> 22) & 7;
+		src0 <= (inst >> 19) & 7;
+		src1 <= (inst >> 16) & 7;
+		immediate <= inst & {16{1'b1}};
+                ctl_state <= `CTL_STATE_DEC1;
+             end
+	     `CTL_STATE_DEC1: begin
+		alu0 <= (src0 == 1) ? immediate : r[src0];
+		alu1 <= (src1 == 1) ? immediate : r[src1];
+		if (opcode == `LHI)
+			alu0 <= dst;
+                ctl_state <= `CTL_STATE_EXEC0;
+             end
+	     `CTL_STATE_EXEC0: begin
+	   	if (ctl_state == `LD) begin
+		   _sram_EN <= 1;
+		   _sram_ADDR <= alu1;
+		end
+                ctl_state <= `CTL_STATE_EXEC1;
+             end
+	     `CTL_STATE_EXEC1: begin
+	        case (opcode)
+	          `ADD: r[dst] <= aluout_wire;  
+	          `SUB: r[dst] <= aluout_wire;  
+	          `LSF: r[dst] <= aluout_wire; 
+	          `RSF: r[dst] <= aluout_wire; 
+	          `AND: r[dst] <= aluout_wire; 
+	          `OR:  r[dst] <= aluout_wire; 
+	          `XOR: r[dst] <= aluout_wire; 
+	          `LHI: r[dst] <= aluout_wire; 
+
+	          `LD:  begin
+	        	  r[dst] <= sram_DO;
+	        	  _sram_EN <= 0;
+	        	end
+	          `ST:  begin
+	        	  _sram_DI <= alu0;
+	        	  _sram_ADDR <= alu1;
+	        	  _sram_EN <= 1;
+	        	  _sram_WE <= 1;
+	                end
+	          `JLT: begin 
+	          	  if (aluout_wire == 1) begin
+                             r[7] <= pc - 1;
+	        	     pc <= immediate;
+	        	  end
+	        	end
+	          `JLE: begin 
+	          	  if (aluout_wire == 1) begin
+                             r[7] <= pc - 1;
+	        	     pc <= immediate;
+	        	  end
+	        	end
+	          `JEQ: begin 
+	          	  if (aluout_wire == 1) begin
+                             r[7] <= pc - 1;
+	        	     pc <= immediate;
+	        	  end
+	        	end
+	          `JNE: begin 
+	          	  if (aluout_wire == 1) begin
+                             r[7] <= pc - 1;
+	        	     pc <= immediate;
+	        	  end
+	        	end
+	          `JIN: begin 
+	          	  if (aluout_wire == 1) begin
+                             r[7] <= pc - 1;
+	        	     pc <= immediate;
+	        	  end
+	        	end
+	        endcase
+                ctl_state <= (opcode == `HLT) ? `CTL_STATE_IDLE : `CTL_STATE_FETCH0;
+             end
 	   endcase
 	   if (opcode == `HLT) begin
 	      $fclose(verilog_trace_fp);
