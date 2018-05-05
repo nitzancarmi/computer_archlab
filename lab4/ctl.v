@@ -63,7 +63,7 @@ module CTL(
    reg [15:0] dma_reg;
    reg [15:0] dma_cnt;
    reg [1:0]  dma_state;
-   reg        dma_enable;
+   wire       dma_enable;
    reg        dma_enable_o;
 
 
@@ -93,23 +93,18 @@ module CTL(
 		  sram_ADDR <= alu1;
 	          sram_DI <= alu0;
 	  end
+
           if (dma_enable)
           begin
 		case(dma_state)
-                begin
 		    `DMA_STATE_READ: sram_ADDR <= dma_raddr;
 		    `DMA_STATE_WRITE:
                     begin
 		        sram_ADDR <= dma_waddr;
 	                sram_DI <= dma_reg;
                     end
-		end
-	end
-
-
-
-	
-          end
+		endcase
+	  end
        end
 
    // synchronous instructions
@@ -284,7 +279,6 @@ module CTL(
            if (dma_enable_o)
            begin
           	case(dma_state)
-                    begin
           	    `DMA_STATE_READ:
                         begin
           	    	if (dma_enable)
@@ -292,15 +286,17 @@ module CTL(
                         end
           	    `DMA_STATE_SAMPLE:
                         begin
-          	    	dma_reg = sram_DO;
-          	    	dma_raddr = dma_raddr + 1;
-          	    	dma_state = `DMA_STATE_WRITE;
+          	    	dma_reg <= sram_DO;
+          	    	dma_raddr <= dma_raddr + 1;
+          	    	dma_state <= `DMA_STATE_WRITE;
                         end
           	    `DMA_STATE_WRITE:
-          	    	dma_waddr = dma_waddr + 1;
-          	    	dma_cnt = dma_cnt - 1;
-          	    	dma_state = (dma_cnt == 1) ? `DMA_STATE_IDLE : `DMA_STATE_READ;
-          	end
+                        begin
+          	    	dma_waddr <= dma_waddr + 1;
+          	    	dma_cnt <= dma_cnt - 1;
+          	    	dma_state <= (dma_cnt == 1) ? `DMA_STATE_IDLE : `DMA_STATE_READ;
+                        end
+          	endcase
            end
 
 	end // !reset
