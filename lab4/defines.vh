@@ -18,9 +18,19 @@
 `define LHI 7
 `define LD 8
 `define ST 9
+// DMA opcodes
+`define DMA 10
+`define POL 11
+//------------
 `define JLT 16
 `define JLE 17
 `define JEQ 18
 `define JNE 19
 `define JIN 20
 `define HLT 24
+
+//DMA
+`define DMA_STATE_IDLE		0
+`define DMA_STATE_READ		1
+`define DMA_STATE_SAMPLE	2
+`define DMA_STATE_WRITE		3

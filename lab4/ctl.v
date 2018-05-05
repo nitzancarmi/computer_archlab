@@ -57,6 +57,16 @@ module CTL(
    reg [15:0] sram_ADDR;
    reg [31:0] sram_DI;
 
+//DMA registers
+   reg [15:0] dma_raddr;
+   reg [15:0] dma_waddr;
+   reg [15:0] dma_reg;
+   reg [15:0] dma_cnt;
+   reg [1:0]  dma_state;
+   reg        dma_enable;
+   reg        dma_enable_o;
+
+
    integer 	 verilog_trace_fp, rc;
 
    initial
@@ -67,6 +77,10 @@ module CTL(
      assign sram_EN = (ctl_state == `CTL_STATE_FETCH0) | ((ctl_state == `CTL_STATE_EXEC0) & (opcode == `LD)) | 
 	              ((ctl_state == `CTL_STATE_EXEC1) & (opcode == `ST));
      assign sram_WE = ((ctl_state == `CTL_STATE_EXEC1) & (opcode == `ST));
+
+     assign dma_enable = ~((ctl_state == `CTL_STATE_FETCH0) |
+			   (ctl_state == `CTL_STATE_EXEC0 & opcode == `LD) |
+			   (ctl_state == `CTL_STATE_EXEC1 & opcode == `ST));
 
      always @(ctl_state, opcode, pc, alu1, alu0)
        begin
@@ -79,11 +93,30 @@ module CTL(
 		  sram_ADDR <= alu1;
 	          sram_DI <= alu0;
 	  end
+          if (dma_enable)
+          begin
+		case(dma_state)
+                begin
+		    `DMA_STATE_READ: sram_ADDR <= dma_raddr;
+		    `DMA_STATE_WRITE:
+                    begin
+		        sram_ADDR <= dma_waddr;
+	                sram_DI <= dma_reg;
+                    end
+		end
+	end
+
+
+
+	
+          end
        end
 
    // synchronous instructions
    always@(posedge clk)
      begin
+        dma_enable_o <= dma_enable;
+
 	if (reset) begin
 	   // registers reset
 	   r[0] <= 0;
@@ -128,6 +161,12 @@ module CTL(
 	   $fdisplay(verilog_trace_fp, "aluout %08x", aluout);
 	   $fdisplay(verilog_trace_fp, "cycle_counter %08x", cycle_counter);
 	   $fdisplay(verilog_trace_fp, "ctl_state %08x\n", ctl_state);
+
+	   $fdisplay(verilog_trace_fp, "dma_raddr %08x\n", dma_raddr);
+	   $fdisplay(verilog_trace_fp, "dma_reg %08x\n", dma_reg);
+	   $fdisplay(verilog_trace_fp, "dma_waddr %08x\n", dma_waddr);
+	   $fdisplay(verilog_trace_fp, "dma_cnt %08x\n", dma_cnt);
+	   $fdisplay(verilog_trace_fp, "dma_state %08x\n\n", dma_state);
 
 	   cycle_counter <= cycle_counter + 1;
 	   case (ctl_state)
@@ -175,6 +214,15 @@ module CTL(
 	          `JEQ: aluout <= aluout_wire; 
 	          `JNE: aluout <= aluout_wire; 
 	          `JIN: aluout <= aluout_wire; 
+		  `DMA: begin
+			    if (dma_state == `DMA_STATE_IDLE)
+                            begin
+			    	dma_raddr = alu0;
+			    	dma_waddr = alu1;
+			    	dma_cnt = immediate;
+			    	dma_state = `DMA_STATE_READ;
+			    end
+			end
 	        endcase
                 ctl_state <= `CTL_STATE_EXEC1;
              end
@@ -222,6 +270,7 @@ module CTL(
 	        	     pc <= immediate;
 	        	  end
 	        	end
+	          `POL: r[dst] <= dma_cnt; 
 	        endcase
                 ctl_state <= (opcode == `HLT) ? `CTL_STATE_IDLE : `CTL_STATE_FETCH0;
 	   	if (opcode == `HLT) begin
@@ -230,7 +279,30 @@ module CTL(
 	   	   $finish;
 	   	end
              end
-	   endcase
+	   endcase //ctl_state
+
+           if (dma_enable_o)
+           begin
+          	case(dma_state)
+                    begin
+          	    `DMA_STATE_READ:
+                        begin
+          	    	if (dma_enable)
+          	    		dma_state = `DMA_STATE_SAMPLE;
+                        end
+          	    `DMA_STATE_SAMPLE:
+                        begin
+          	    	dma_reg = sram_DO;
+          	    	dma_raddr = dma_raddr + 1;
+          	    	dma_state = `DMA_STATE_WRITE;
+                        end
+          	    `DMA_STATE_WRITE:
+          	    	dma_waddr = dma_waddr + 1;
+          	    	dma_cnt = dma_cnt - 1;
+          	    	dma_state = (dma_cnt == 1) ? `DMA_STATE_IDLE : `DMA_STATE_READ;
+          	end
+           end
+
 	end // !reset
      end // @posedge(clk)
 endmodule // CTL
