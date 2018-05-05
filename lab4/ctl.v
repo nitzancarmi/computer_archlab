@@ -63,8 +63,10 @@ module CTL(
    reg [15:0] dma_reg;
    reg [15:0] dma_cnt;
    reg [1:0]  dma_state;
+   reg [1:0]  dma_state_o;
    wire       dma_enable;
    reg        dma_enable_o;
+//   reg        dma_start;
 
 
    integer 	 verilog_trace_fp, rc;
@@ -110,7 +112,8 @@ module CTL(
    // synchronous instructions
    always@(posedge clk)
      begin
-        dma_enable_o <= dma_enable;
+        dma_enable_o = dma_enable;
+        dma_state_o = dma_state;
 
 	if (reset) begin
 	   // registers reset
@@ -134,6 +137,15 @@ module CTL(
 	   immediate <= 0;
 	   cycle_counter <= 0;
 	   ctl_state <= 0;
+
+	   dma_raddr <= 0;
+	   dma_waddr <= 0;
+	   dma_reg <= 0;
+	   dma_cnt <= 0;
+	   dma_state <= 0;
+	   dma_state_o <= 0;
+	   dma_enable_o <= 0;
+//           dma_start <= 0;
 	   
 	end else begin
 	   // generate cycle trace
@@ -155,13 +167,13 @@ module CTL(
 	   $fdisplay(verilog_trace_fp, "alu1 %08x", alu1);
 	   $fdisplay(verilog_trace_fp, "aluout %08x", aluout);
 	   $fdisplay(verilog_trace_fp, "cycle_counter %08x", cycle_counter);
-	   $fdisplay(verilog_trace_fp, "ctl_state %08x\n", ctl_state);
+	   $fdisplay(verilog_trace_fp, "ctl_state %08x", ctl_state);
 
-	   $fdisplay(verilog_trace_fp, "dma_raddr %08x\n", dma_raddr);
-	   $fdisplay(verilog_trace_fp, "dma_reg %08x\n", dma_reg);
-	   $fdisplay(verilog_trace_fp, "dma_waddr %08x\n", dma_waddr);
-	   $fdisplay(verilog_trace_fp, "dma_cnt %08x\n", dma_cnt);
-	   $fdisplay(verilog_trace_fp, "dma_state %08x\n\n", dma_state);
+	   $fdisplay(verilog_trace_fp, "dma_raddr %08x", dma_raddr);
+	   $fdisplay(verilog_trace_fp, "dma_reg %08x", dma_reg);
+	   $fdisplay(verilog_trace_fp, "dma_waddr %08x", dma_waddr);
+	   $fdisplay(verilog_trace_fp, "dma_cnt %08x", dma_cnt);
+	   $fdisplay(verilog_trace_fp, "dma_state %08x\n", dma_state);
 
 	   cycle_counter <= cycle_counter + 1;
 	   case (ctl_state)
@@ -212,10 +224,11 @@ module CTL(
 		  `DMA: begin
 			    if (dma_state == `DMA_STATE_IDLE)
                             begin
-			    	dma_raddr = alu0;
-			    	dma_waddr = alu1;
-			    	dma_cnt = immediate;
-			    	dma_state = `DMA_STATE_READ;
+//                                dma_start <= 1;
+			    	dma_raddr <= alu0;
+			    	dma_waddr <= alu1;
+			    	dma_cnt <= immediate;
+				dma_state = `DMA_STATE_READ;
 			    end
 			end
 	        endcase
@@ -278,11 +291,11 @@ module CTL(
 
            if (dma_enable_o)
            begin
-          	case(dma_state)
+          	case(dma_state_o)
           	    `DMA_STATE_READ:
                         begin
           	    	if (dma_enable)
-          	    		dma_state = `DMA_STATE_SAMPLE;
+          	    		dma_state <= `DMA_STATE_SAMPLE;
                         end
           	    `DMA_STATE_SAMPLE:
                         begin
@@ -297,6 +310,7 @@ module CTL(
           	    	dma_state <= (dma_cnt == 1) ? `DMA_STATE_IDLE : `DMA_STATE_READ;
                         end
           	endcase
+//                end
            end
 
 	end // !reset
