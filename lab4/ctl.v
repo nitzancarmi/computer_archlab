@@ -224,13 +224,13 @@ module CTL(
 	        	end
 	        endcase
                 ctl_state <= (opcode == `HLT) ? `CTL_STATE_IDLE : `CTL_STATE_FETCH0;
+	   	if (opcode == `HLT) begin
+	   	   $fclose(verilog_trace_fp);
+	   	   $writememh("verilog_sram_out.txt", top.SP.SRAM.mem);
+	   	   $finish;
+	   	end
              end
 	   endcase
-	   if (opcode == `HLT) begin
-	      $fclose(verilog_trace_fp);
-	      $writememh("verilog_sram_out.txt", top.SP.SRAM.mem);
-	      $finish;
-	   end
 	end // !reset
      end // @posedge(clk)
 endmodule // CTL
