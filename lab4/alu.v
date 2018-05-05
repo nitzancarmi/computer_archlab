@@ -21,6 +21,12 @@ module ALU(opcode, alu0, alu1, aluout);
 	  `OR:  aluout = alu0 | alu1;
 	  `XOR: aluout = alu0 ^ alu1;
 	  `LHI: aluout = (alu0 << 16) + (aluout &  {16{1'b1}});
+
+          `JLT: aluout = (alu0 < alu1);
+          `JLE: aluout = (alu0 <= alu1);
+          `JEQ: aluout = (alu0 == alu1);
+          `JNE: aluout = ~(alu0 == alu1);
+          `JIN: aluout = 1;
 	endcase
      end
 endmodule // alu
