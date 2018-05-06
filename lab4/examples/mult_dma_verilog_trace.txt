@@ -13364,7 +13364,7 @@ src1 00000000
 immediate 00000011
 alu0 00000000
 alu1 00000000
-aluout fffffffe
+aluout 00000000
 cycle_counter 00000216
 ctl_state 00000006
 dma_raddr 00000406
@@ -13389,7 +13389,7 @@ src1 00000000
 immediate 00000011
 alu0 00000000
 alu1 00000000
-aluout fffffffe
+aluout 00000000
 cycle_counter 00000217
 ctl_state 00000001
 dma_raddr 00000406
@@ -13414,7 +13414,7 @@ src1 00000000
 immediate 00000011
 alu0 00000000
 alu1 00000000
-aluout fffffffe
+aluout 00000000
 cycle_counter 00000218
 ctl_state 00000002
 dma_raddr 00000406
@@ -13439,7 +13439,7 @@ src1 00000000
 immediate 00000011
 alu0 00000000
 alu1 00000000
-aluout fffffffe
+aluout 00000000
 cycle_counter 00000219
 ctl_state 00000003
 dma_raddr 00000406
@@ -13464,7 +13464,7 @@ src1 00000001
 immediate 00000001
 alu0 00000000
 alu1 00000000
-aluout fffffffe
+aluout 00000000
 cycle_counter 0000021a
 ctl_state 00000004
 dma_raddr 00000406
@@ -13489,7 +13489,7 @@ src1 00000001
 immediate 00000001
 alu0 00000000
 alu1 00000001
-aluout fffffffe
+aluout 00000000
 cycle_counter 0000021b
 ctl_state 00000005
 dma_raddr 00000406
