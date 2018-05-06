@@ -568,7 +568,7 @@ aluout 000004b0
 cycle_counter 00000016
 ctl_state 00000004
 dma_raddr 000003e9
-dma_reg 0000044c
+dma_reg 00000000
 dma_waddr 000004b0
 dma_cnt 0000001e
 dma_state 00000003
@@ -593,7 +593,7 @@ aluout 000004b0
 cycle_counter 00000017
 ctl_state 00000005
 dma_raddr 000003e9
-dma_reg 0000044c
+dma_reg 00000000
 dma_waddr 000004b1
 dma_cnt 0000001d
 dma_state 00000001
@@ -618,7 +618,7 @@ aluout 0000044c
 cycle_counter 00000018
 ctl_state 00000006
 dma_raddr 000003e9
-dma_reg 0000044c
+dma_reg 00000000
 dma_waddr 000004b1
 dma_cnt 0000001d
 dma_state 00000002
@@ -643,7 +643,7 @@ aluout 0000044c
 cycle_counter 00000019
 ctl_state 00000001
 dma_raddr 000003ea
-dma_reg 0000044c
+dma_reg 00000001
 dma_waddr 000004b1
 dma_cnt 0000001d
 dma_state 00000003
@@ -668,7 +668,7 @@ aluout 0000044c
 cycle_counter 0000001a
 ctl_state 00000002
 dma_raddr 000003ea
-dma_reg 0000044c
+dma_reg 00000001
 dma_waddr 000004b1
 dma_cnt 0000001d
 dma_state 00000003
@@ -693,7 +693,7 @@ aluout 0000044c
 cycle_counter 0000001b
 ctl_state 00000003
 dma_raddr 000003ea
-dma_reg 0000044c
+dma_reg 00000001
 dma_waddr 000004b2
 dma_cnt 0000001c
 dma_state 00000001
@@ -718,7 +718,7 @@ aluout 0000044c
 cycle_counter 0000001c
 ctl_state 00000004
 dma_raddr 000003ea
-dma_reg 0000044c
+dma_reg 00000001
 dma_waddr 000004b2
 dma_cnt 0000001c
 dma_state 00000002
@@ -743,7 +743,7 @@ aluout 0000044c
 cycle_counter 0000001d
 ctl_state 00000005
 dma_raddr 000003eb
-dma_reg 0000000a
+dma_reg 00000002
 dma_waddr 000004b2
 dma_cnt 0000001c
 dma_state 00000003
@@ -768,7 +768,7 @@ aluout 0000000a
 cycle_counter 0000001e
 ctl_state 00000006
 dma_raddr 000003eb
-dma_reg 0000000a
+dma_reg 00000002
 dma_waddr 000004b3
 dma_cnt 0000001b
 dma_state 00000001
@@ -793,7 +793,7 @@ aluout 0000000a
 cycle_counter 0000001f
 ctl_state 00000001
 dma_raddr 000003eb
-dma_reg 0000000a
+dma_reg 00000002
 dma_waddr 000004b3
 dma_cnt 0000001b
 dma_state 00000001
@@ -818,7 +818,7 @@ aluout 0000000a
 cycle_counter 00000020
 ctl_state 00000002
 dma_raddr 000003eb
-dma_reg 0000000a
+dma_reg 00000002
 dma_waddr 000004b3
 dma_cnt 0000001b
 dma_state 00000001
@@ -843,7 +843,7 @@ aluout 0000000a
 cycle_counter 00000021
 ctl_state 00000003
 dma_raddr 000003eb
-dma_reg 0000000a
+dma_reg 00000002
 dma_waddr 000004b3
 dma_cnt 0000001b
 dma_state 00000002
@@ -868,7 +868,7 @@ aluout 0000000a
 cycle_counter 00000022
 ctl_state 00000004
 dma_raddr 000003ec
-dma_reg 0000000d
+dma_reg 00000003
 dma_waddr 000004b3
 dma_cnt 0000001b
 dma_state 00000003
@@ -893,7 +893,7 @@ aluout 0000000a
 cycle_counter 00000023
 ctl_state 00000005
 dma_raddr 000003ec
-dma_reg 0000000d
+dma_reg 00000003
 dma_waddr 000004b4
 dma_cnt 0000001a
 dma_state 00000001
@@ -918,7 +918,7 @@ aluout 00000000
 cycle_counter 00000024
 ctl_state 00000006
 dma_raddr 000003ec
-dma_reg 0000000d
+dma_reg 00000003
 dma_waddr 000004b4
 dma_cnt 0000001a
 dma_state 00000002
@@ -943,7 +943,7 @@ aluout 00000000
 cycle_counter 00000025
 ctl_state 00000001
 dma_raddr 000003ed
-dma_reg 0000000d
+dma_reg 00000004
 dma_waddr 000004b4
 dma_cnt 0000001a
 dma_state 00000003
@@ -968,7 +968,7 @@ aluout 00000000
 cycle_counter 00000026
 ctl_state 00000002
 dma_raddr 000003ed
-dma_reg 0000000d
+dma_reg 00000004
 dma_waddr 000004b4
 dma_cnt 0000001a
 dma_state 00000003
@@ -993,7 +993,7 @@ aluout 00000000
 cycle_counter 00000027
 ctl_state 00000003
 dma_raddr 000003ed
-dma_reg 0000000d
+dma_reg 00000004
 dma_waddr 000004b5
 dma_cnt 00000019
 dma_state 00000001
@@ -1018,7 +1018,7 @@ aluout 00000000
 cycle_counter 00000028
 ctl_state 00000004
 dma_raddr 000003ed
-dma_reg 0000000d
+dma_reg 00000004
 dma_waddr 000004b5
 dma_cnt 00000019
 dma_state 00000002
@@ -1043,7 +1043,7 @@ aluout 00000000
 cycle_counter 00000029
 ctl_state 00000005
 dma_raddr 000003ee
-dma_reg 00000000
+dma_reg 00000005
 dma_waddr 000004b5
 dma_cnt 00000019
 dma_state 00000003
@@ -1068,7 +1068,7 @@ aluout 00000000
 cycle_counter 0000002a
 ctl_state 00000006
 dma_raddr 000003ee
-dma_reg 00000000
+dma_reg 00000005
 dma_waddr 000004b5
 dma_cnt 00000019
 dma_state 00000003
@@ -1093,7 +1093,7 @@ aluout 00000000
 cycle_counter 0000002b
 ctl_state 00000001
 dma_raddr 000003ee
-dma_reg 00000000
+dma_reg 00000005
 dma_waddr 000004b6
 dma_cnt 00000018
 dma_state 00000001
@@ -1118,7 +1118,7 @@ aluout 00000000
 cycle_counter 0000002c
 ctl_state 00000002
 dma_raddr 000003ee
-dma_reg 00000000
+dma_reg 00000005
 dma_waddr 000004b6
 dma_cnt 00000018
 dma_state 00000001
@@ -1143,7 +1143,7 @@ aluout 00000000
 cycle_counter 0000002d
 ctl_state 00000003
 dma_raddr 000003ee
-dma_reg 00000000
+dma_reg 00000005
 dma_waddr 000004b6
 dma_cnt 00000018
 dma_state 00000002
@@ -1168,7 +1168,7 @@ aluout 00000000
 cycle_counter 0000002e
 ctl_state 00000004
 dma_raddr 000003ef
-dma_reg 00000000
+dma_reg 00000006
 dma_waddr 000004b6
 dma_cnt 00000018
 dma_state 00000003
@@ -1193,7 +1193,7 @@ aluout 00000000
 cycle_counter 0000002f
 ctl_state 00000005
 dma_raddr 000003ef
-dma_reg 00000000
+dma_reg 00000006
 dma_waddr 000004b7
 dma_cnt 00000017
 dma_state 00000001
@@ -1218,7 +1218,7 @@ aluout 00000000
 cycle_counter 00000030
 ctl_state 00000006
 dma_raddr 000003ef
-dma_reg 00000000
+dma_reg 00000006
 dma_waddr 000004b7
 dma_cnt 00000017
 dma_state 00000002
@@ -1243,7 +1243,7 @@ aluout 00000000
 cycle_counter 00000031
 ctl_state 00000001
 dma_raddr 000003f0
-dma_reg 00000000
+dma_reg 00000007
 dma_waddr 000004b7
 dma_cnt 00000017
 dma_state 00000003
@@ -1268,7 +1268,7 @@ aluout 00000000
 cycle_counter 00000032
 ctl_state 00000002
 dma_raddr 000003f0
-dma_reg 00000000
+dma_reg 00000007
 dma_waddr 000004b7
 dma_cnt 00000017
 dma_state 00000003
@@ -1293,7 +1293,7 @@ aluout 00000000
 cycle_counter 00000033
 ctl_state 00000003
 dma_raddr 000003f0
-dma_reg 00000000
+dma_reg 00000007
 dma_waddr 000004b8
 dma_cnt 00000016
 dma_state 00000001
@@ -1318,7 +1318,7 @@ aluout 00000000
 cycle_counter 00000034
 ctl_state 00000004
 dma_raddr 000003f0
-dma_reg 00000000
+dma_reg 00000007
 dma_waddr 000004b8
 dma_cnt 00000016
 dma_state 00000002
@@ -1343,7 +1343,7 @@ aluout 00000000
 cycle_counter 00000035
 ctl_state 00000005
 dma_raddr 000003f1
-dma_reg 00000000
+dma_reg 00000008
 dma_waddr 000004b8
 dma_cnt 00000016
 dma_state 00000003
@@ -1368,7 +1368,7 @@ aluout 00000000
 cycle_counter 00000036
 ctl_state 00000006
 dma_raddr 000003f1
-dma_reg 00000000
+dma_reg 00000008
 dma_waddr 000004b9
 dma_cnt 00000015
 dma_state 00000001
@@ -1393,7 +1393,7 @@ aluout 00000000
 cycle_counter 00000037
 ctl_state 00000001
 dma_raddr 000003f1
-dma_reg 00000000
+dma_reg 00000008
 dma_waddr 000004b9
 dma_cnt 00000015
 dma_state 00000001
@@ -1418,7 +1418,7 @@ aluout 00000000
 cycle_counter 00000038
 ctl_state 00000002
 dma_raddr 000003f1
-dma_reg 00000000
+dma_reg 00000008
 dma_waddr 000004b9
 dma_cnt 00000015
 dma_state 00000001
@@ -1443,7 +1443,7 @@ aluout 00000000
 cycle_counter 00000039
 ctl_state 00000003
 dma_raddr 000003f1
-dma_reg 00000000
+dma_reg 00000008
 dma_waddr 000004b9
 dma_cnt 00000015
 dma_state 00000002
@@ -1468,7 +1468,7 @@ aluout 00000000
 cycle_counter 0000003a
 ctl_state 00000004
 dma_raddr 000003f2
-dma_reg 00000001
+dma_reg 00000009
 dma_waddr 000004b9
 dma_cnt 00000015
 dma_state 00000003
@@ -1493,7 +1493,7 @@ aluout 00000000
 cycle_counter 0000003b
 ctl_state 00000005
 dma_raddr 000003f2
-dma_reg 00000001
+dma_reg 00000009
 dma_waddr 000004ba
 dma_cnt 00000014
 dma_state 00000001
@@ -1518,7 +1518,7 @@ aluout 000003e9
 cycle_counter 0000003c
 ctl_state 00000006
 dma_raddr 000003f2
-dma_reg 00000001
+dma_reg 00000009
 dma_waddr 000004ba
 dma_cnt 00000014
 dma_state 00000002
@@ -1543,7 +1543,7 @@ aluout 000003e9
 cycle_counter 0000003d
 ctl_state 00000001
 dma_raddr 000003f3
-dma_reg 00000001
+dma_reg 0000000a
 dma_waddr 000004ba
 dma_cnt 00000014
 dma_state 00000003
@@ -1568,7 +1568,7 @@ aluout 000003e9
 cycle_counter 0000003e
 ctl_state 00000002
 dma_raddr 000003f3
-dma_reg 00000001
+dma_reg 0000000a
 dma_waddr 000004ba
 dma_cnt 00000014
 dma_state 00000003
@@ -1593,7 +1593,7 @@ aluout 000003e9
 cycle_counter 0000003f
 ctl_state 00000003
 dma_raddr 000003f3
-dma_reg 00000001
+dma_reg 0000000a
 dma_waddr 000004bb
 dma_cnt 00000013
 dma_state 00000001
@@ -1618,7 +1618,7 @@ aluout 000003e9
 cycle_counter 00000040
 ctl_state 00000004
 dma_raddr 000003f3
-dma_reg 00000001
+dma_reg 0000000a
 dma_waddr 000004bb
 dma_cnt 00000013
 dma_state 00000002
@@ -1643,7 +1643,7 @@ aluout 000003e9
 cycle_counter 00000041
 ctl_state 00000005
 dma_raddr 000003f4
-dma_reg 00000001
+dma_reg 0000000b
 dma_waddr 000004bb
 dma_cnt 00000013
 dma_state 00000003
@@ -1668,7 +1668,7 @@ aluout 0000044d
 cycle_counter 00000042
 ctl_state 00000006
 dma_raddr 000003f4
-dma_reg 00000001
+dma_reg 0000000b
 dma_waddr 000004bc
 dma_cnt 00000012
 dma_state 00000001
@@ -1693,7 +1693,7 @@ aluout 0000044d
 cycle_counter 00000043
 ctl_state 00000001
 dma_raddr 000003f4
-dma_reg 00000001
+dma_reg 0000000b
 dma_waddr 000004bc
 dma_cnt 00000012
 dma_state 00000001
@@ -1718,7 +1718,7 @@ aluout 0000044d
 cycle_counter 00000044
 ctl_state 00000002
 dma_raddr 000003f4
-dma_reg 00000001
+dma_reg 0000000b
 dma_waddr 000004bc
 dma_cnt 00000012
 dma_state 00000001
@@ -1743,7 +1743,7 @@ aluout 0000044d
 cycle_counter 00000045
 ctl_state 00000003
 dma_raddr 000003f4
-dma_reg 00000001
+dma_reg 0000000b
 dma_waddr 000004bc
 dma_cnt 00000012
 dma_state 00000002
@@ -1768,7 +1768,7 @@ aluout 0000044d
 cycle_counter 00000046
 ctl_state 00000004
 dma_raddr 000003f5
-dma_reg 00000001
+dma_reg 0000000c
 dma_waddr 000004bc
 dma_cnt 00000012
 dma_state 00000003
@@ -1793,7 +1793,7 @@ aluout 0000044d
 cycle_counter 00000047
 ctl_state 00000005
 dma_raddr 000003f5
-dma_reg 00000001
+dma_reg 0000000c
 dma_waddr 000004bd
 dma_cnt 00000011
 dma_state 00000001
@@ -1818,7 +1818,7 @@ aluout 00000009
 cycle_counter 00000048
 ctl_state 00000006
 dma_raddr 000003f5
-dma_reg 00000001
+dma_reg 0000000c
 dma_waddr 000004bd
 dma_cnt 00000011
 dma_state 00000002
@@ -1843,7 +1843,7 @@ aluout 00000009
 cycle_counter 00000049
 ctl_state 00000001
 dma_raddr 000003f6
-dma_reg 00000001
+dma_reg 0000000d
 dma_waddr 000004bd
 dma_cnt 00000011
 dma_state 00000003
@@ -1868,7 +1868,7 @@ aluout 00000009
 cycle_counter 0000004a
 ctl_state 00000002
 dma_raddr 000003f6
-dma_reg 00000001
+dma_reg 0000000d
 dma_waddr 000004bd
 dma_cnt 00000011
 dma_state 00000003
@@ -1893,7 +1893,7 @@ aluout 00000009
 cycle_counter 0000004b
 ctl_state 00000003
 dma_raddr 000003f6
-dma_reg 00000001
+dma_reg 0000000d
 dma_waddr 000004be
 dma_cnt 00000010
 dma_state 00000001
@@ -1918,7 +1918,7 @@ aluout 00000009
 cycle_counter 0000004c
 ctl_state 00000004
 dma_raddr 000003f6
-dma_reg 00000001
+dma_reg 0000000d
 dma_waddr 000004be
 dma_cnt 00000010
 dma_state 00000002
@@ -1943,7 +1943,7 @@ aluout 00000009
 cycle_counter 0000004d
 ctl_state 00000005
 dma_raddr 000003f7
-dma_reg 00000005
+dma_reg 0000000e
 dma_waddr 000004be
 dma_cnt 00000010
 dma_state 00000003
@@ -1968,7 +1968,7 @@ aluout 00000001
 cycle_counter 0000004e
 ctl_state 00000006
 dma_raddr 000003f7
-dma_reg 00000005
+dma_reg 0000000e
 dma_waddr 000004bf
 dma_cnt 0000000f
 dma_state 00000001
@@ -1993,7 +1993,7 @@ aluout 00000001
 cycle_counter 0000004f
 ctl_state 00000001
 dma_raddr 000003f7
-dma_reg 00000005
+dma_reg 0000000e
 dma_waddr 000004bf
 dma_cnt 0000000f
 dma_state 00000001
@@ -2018,7 +2018,7 @@ aluout 00000001
 cycle_counter 00000050
 ctl_state 00000002
 dma_raddr 000003f7
-dma_reg 00000005
+dma_reg 0000000e
 dma_waddr 000004bf
 dma_cnt 0000000f
 dma_state 00000001
@@ -2043,7 +2043,7 @@ aluout 00000001
 cycle_counter 00000051
 ctl_state 00000003
 dma_raddr 000003f7
-dma_reg 00000005
+dma_reg 0000000e
 dma_waddr 000004bf
 dma_cnt 0000000f
 dma_state 00000002
@@ -2068,7 +2068,7 @@ aluout 00000001
 cycle_counter 00000052
 ctl_state 00000004
 dma_raddr 000003f8
-dma_reg 0000000d
+dma_reg 0000000f
 dma_waddr 000004bf
 dma_cnt 0000000f
 dma_state 00000003
@@ -2093,7 +2093,7 @@ aluout 00000001
 cycle_counter 00000053
 ctl_state 00000005
 dma_raddr 000003f8
-dma_reg 0000000d
+dma_reg 0000000f
 dma_waddr 000004c0
 dma_cnt 0000000e
 dma_state 00000001
@@ -2118,7 +2118,7 @@ aluout 00000000
 cycle_counter 00000054
 ctl_state 00000006
 dma_raddr 000003f8
-dma_reg 0000000d
+dma_reg 0000000f
 dma_waddr 000004c0
 dma_cnt 0000000e
 dma_state 00000002
@@ -2143,7 +2143,7 @@ aluout 00000000
 cycle_counter 00000055
 ctl_state 00000001
 dma_raddr 000003f9
-dma_reg 0000000d
+dma_reg 00000010
 dma_waddr 000004c0
 dma_cnt 0000000e
 dma_state 00000003
@@ -2168,7 +2168,7 @@ aluout 00000000
 cycle_counter 00000056
 ctl_state 00000002
 dma_raddr 000003f9
-dma_reg 0000000d
+dma_reg 00000010
 dma_waddr 000004c0
 dma_cnt 0000000e
 dma_state 00000003
@@ -2193,7 +2193,7 @@ aluout 00000000
 cycle_counter 00000057
 ctl_state 00000003
 dma_raddr 000003f9
-dma_reg 0000000d
+dma_reg 00000010
 dma_waddr 000004c1
 dma_cnt 0000000d
 dma_state 00000001
@@ -2218,7 +2218,7 @@ aluout 00000000
 cycle_counter 00000058
 ctl_state 00000004
 dma_raddr 000003f9
-dma_reg 0000000d
+dma_reg 00000010
 dma_waddr 000004c1
 dma_cnt 0000000d
 dma_state 00000002
@@ -2243,7 +2243,7 @@ aluout 00000000
 cycle_counter 00000059
 ctl_state 00000005
 dma_raddr 000003fa
-dma_reg 00000000
+dma_reg 00000011
 dma_waddr 000004c1
 dma_cnt 0000000d
 dma_state 00000003
@@ -2268,7 +2268,7 @@ aluout 00000000
 cycle_counter 0000005a
 ctl_state 00000006
 dma_raddr 000003fa
-dma_reg 00000000
+dma_reg 00000011
 dma_waddr 000004c1
 dma_cnt 0000000d
 dma_state 00000003
@@ -2293,7 +2293,7 @@ aluout 00000000
 cycle_counter 0000005b
 ctl_state 00000001
 dma_raddr 000003fa
-dma_reg 00000000
+dma_reg 00000011
 dma_waddr 000004c2
 dma_cnt 0000000c
 dma_state 00000001
@@ -2318,7 +2318,7 @@ aluout 00000000
 cycle_counter 0000005c
 ctl_state 00000002
 dma_raddr 000003fa
-dma_reg 00000000
+dma_reg 00000011
 dma_waddr 000004c2
 dma_cnt 0000000c
 dma_state 00000001
@@ -2343,7 +2343,7 @@ aluout 00000000
 cycle_counter 0000005d
 ctl_state 00000003
 dma_raddr 000003fa
-dma_reg 00000000
+dma_reg 00000011
 dma_waddr 000004c2
 dma_cnt 0000000c
 dma_state 00000002
@@ -2368,7 +2368,7 @@ aluout 00000000
 cycle_counter 0000005e
 ctl_state 00000004
 dma_raddr 000003fb
-dma_reg 00000000
+dma_reg 00000012
 dma_waddr 000004c2
 dma_cnt 0000000c
 dma_state 00000003
@@ -2393,7 +2393,7 @@ aluout 00000000
 cycle_counter 0000005f
 ctl_state 00000005
 dma_raddr 000003fb
-dma_reg 00000000
+dma_reg 00000012
 dma_waddr 000004c3
 dma_cnt 0000000b
 dma_state 00000001
@@ -2418,7 +2418,7 @@ aluout 00000000
 cycle_counter 00000060
 ctl_state 00000006
 dma_raddr 000003fb
-dma_reg 00000000
+dma_reg 00000012
 dma_waddr 000004c3
 dma_cnt 0000000b
 dma_state 00000002
@@ -2443,7 +2443,7 @@ aluout 00000000
 cycle_counter 00000061
 ctl_state 00000001
 dma_raddr 000003fc
-dma_reg 00000000
+dma_reg 00000013
 dma_waddr 000004c3
 dma_cnt 0000000b
 dma_state 00000003
@@ -2468,7 +2468,7 @@ aluout 00000000
 cycle_counter 00000062
 ctl_state 00000002
 dma_raddr 000003fc
-dma_reg 00000000
+dma_reg 00000013
 dma_waddr 000004c3
 dma_cnt 0000000b
 dma_state 00000003
@@ -2493,7 +2493,7 @@ aluout 00000000
 cycle_counter 00000063
 ctl_state 00000003
 dma_raddr 000003fc
-dma_reg 00000000
+dma_reg 00000013
 dma_waddr 000004c4
 dma_cnt 0000000a
 dma_state 00000001
@@ -2518,7 +2518,7 @@ aluout 00000000
 cycle_counter 00000064
 ctl_state 00000004
 dma_raddr 000003fc
-dma_reg 00000000
+dma_reg 00000013
 dma_waddr 000004c4
 dma_cnt 0000000a
 dma_state 00000002
@@ -2543,7 +2543,7 @@ aluout 00000000
 cycle_counter 00000065
 ctl_state 00000005
 dma_raddr 000003fd
-dma_reg 00000000
+dma_reg 00000014
 dma_waddr 000004c4
 dma_cnt 0000000a
 dma_state 00000003
@@ -2568,7 +2568,7 @@ aluout 00000000
 cycle_counter 00000066
 ctl_state 00000006
 dma_raddr 000003fd
-dma_reg 00000000
+dma_reg 00000014
 dma_waddr 000004c5
 dma_cnt 00000009
 dma_state 00000001
@@ -2593,7 +2593,7 @@ aluout 00000000
 cycle_counter 00000067
 ctl_state 00000001
 dma_raddr 000003fd
-dma_reg 00000000
+dma_reg 00000014
 dma_waddr 000004c5
 dma_cnt 00000009
 dma_state 00000001
@@ -2618,7 +2618,7 @@ aluout 00000000
 cycle_counter 00000068
 ctl_state 00000002
 dma_raddr 000003fd
-dma_reg 00000000
+dma_reg 00000014
 dma_waddr 000004c5
 dma_cnt 00000009
 dma_state 00000001
@@ -2643,7 +2643,7 @@ aluout 00000000
 cycle_counter 00000069
 ctl_state 00000003
 dma_raddr 000003fd
-dma_reg 00000000
+dma_reg 00000014
 dma_waddr 000004c5
 dma_cnt 00000009
 dma_state 00000002
@@ -2668,7 +2668,7 @@ aluout 00000000
 cycle_counter 0000006a
 ctl_state 00000004
 dma_raddr 000003fe
-dma_reg 00000001
+dma_reg 00000015
 dma_waddr 000004c5
 dma_cnt 00000009
 dma_state 00000003
@@ -2693,7 +2693,7 @@ aluout 00000000
 cycle_counter 0000006b
 ctl_state 00000005
 dma_raddr 000003fe
-dma_reg 00000001
+dma_reg 00000015
 dma_waddr 000004c6
 dma_cnt 00000008
 dma_state 00000001
@@ -2718,7 +2718,7 @@ aluout 000003ea
 cycle_counter 0000006c
 ctl_state 00000006
 dma_raddr 000003fe
-dma_reg 00000001
+dma_reg 00000015
 dma_waddr 000004c6
 dma_cnt 00000008
 dma_state 00000002
@@ -2743,7 +2743,7 @@ aluout 000003ea
 cycle_counter 0000006d
 ctl_state 00000001
 dma_raddr 000003ff
-dma_reg 00000001
+dma_reg 00000016
 dma_waddr 000004c6
 dma_cnt 00000008
 dma_state 00000003
@@ -2768,7 +2768,7 @@ aluout 000003ea
 cycle_counter 0000006e
 ctl_state 00000002
 dma_raddr 000003ff
-dma_reg 00000001
+dma_reg 00000016
 dma_waddr 000004c6
 dma_cnt 00000008
 dma_state 00000003
@@ -2793,7 +2793,7 @@ aluout 000003ea
 cycle_counter 0000006f
 ctl_state 00000003
 dma_raddr 000003ff
-dma_reg 00000001
+dma_reg 00000016
 dma_waddr 000004c7
 dma_cnt 00000007
 dma_state 00000001
@@ -2818,7 +2818,7 @@ aluout 000003ea
 cycle_counter 00000070
 ctl_state 00000004
 dma_raddr 000003ff
-dma_reg 00000001
+dma_reg 00000016
 dma_waddr 000004c7
 dma_cnt 00000007
 dma_state 00000002
@@ -2843,7 +2843,7 @@ aluout 000003ea
 cycle_counter 00000071
 ctl_state 00000005
 dma_raddr 00000400
-dma_reg 00000001
+dma_reg 00000017
 dma_waddr 000004c7
 dma_cnt 00000007
 dma_state 00000003
@@ -2868,7 +2868,7 @@ aluout 0000044e
 cycle_counter 00000072
 ctl_state 00000006
 dma_raddr 00000400
-dma_reg 00000001
+dma_reg 00000017
 dma_waddr 000004c8
 dma_cnt 00000006
 dma_state 00000001
@@ -2893,7 +2893,7 @@ aluout 0000044e
 cycle_counter 00000073
 ctl_state 00000001
 dma_raddr 00000400
-dma_reg 00000001
+dma_reg 00000017
 dma_waddr 000004c8
 dma_cnt 00000006
 dma_state 00000001
@@ -2918,7 +2918,7 @@ aluout 0000044e
 cycle_counter 00000074
 ctl_state 00000002
 dma_raddr 00000400
-dma_reg 00000001
+dma_reg 00000017
 dma_waddr 000004c8
 dma_cnt 00000006
 dma_state 00000001
@@ -2943,7 +2943,7 @@ aluout 0000044e
 cycle_counter 00000075
 ctl_state 00000003
 dma_raddr 00000400
-dma_reg 00000001
+dma_reg 00000017
 dma_waddr 000004c8
 dma_cnt 00000006
 dma_state 00000002
@@ -2968,7 +2968,7 @@ aluout 0000044e
 cycle_counter 00000076
 ctl_state 00000004
 dma_raddr 00000401
-dma_reg 00000001
+dma_reg 00000018
 dma_waddr 000004c8
 dma_cnt 00000006
 dma_state 00000003
@@ -2993,7 +2993,7 @@ aluout 0000044e
 cycle_counter 00000077
 ctl_state 00000005
 dma_raddr 00000401
-dma_reg 00000001
+dma_reg 00000018
 dma_waddr 000004c9
 dma_cnt 00000005
 dma_state 00000001
@@ -3018,7 +3018,7 @@ aluout 00000008
 cycle_counter 00000078
 ctl_state 00000006
 dma_raddr 00000401
-dma_reg 00000001
+dma_reg 00000018
 dma_waddr 000004c9
 dma_cnt 00000005
 dma_state 00000002
@@ -3043,7 +3043,7 @@ aluout 00000008
 cycle_counter 00000079
 ctl_state 00000001
 dma_raddr 00000402
-dma_reg 00000001
+dma_reg 00000019
 dma_waddr 000004c9
 dma_cnt 00000005
 dma_state 00000003
@@ -3068,7 +3068,7 @@ aluout 00000008
 cycle_counter 0000007a
 ctl_state 00000002
 dma_raddr 00000402
-dma_reg 00000001
+dma_reg 00000019
 dma_waddr 000004c9
 dma_cnt 00000005
 dma_state 00000003
@@ -3093,7 +3093,7 @@ aluout 00000008
 cycle_counter 0000007b
 ctl_state 00000003
 dma_raddr 00000402
-dma_reg 00000001
+dma_reg 00000019
 dma_waddr 000004ca
 dma_cnt 00000004
 dma_state 00000001
@@ -3118,7 +3118,7 @@ aluout 00000008
 cycle_counter 0000007c
 ctl_state 00000004
 dma_raddr 00000402
-dma_reg 00000001
+dma_reg 00000019
 dma_waddr 000004ca
 dma_cnt 00000004
 dma_state 00000002
@@ -3143,7 +3143,7 @@ aluout 00000008
 cycle_counter 0000007d
 ctl_state 00000005
 dma_raddr 00000403
-dma_reg 00000005
+dma_reg 0000001a
 dma_waddr 000004ca
 dma_cnt 00000004
 dma_state 00000003
@@ -3168,7 +3168,7 @@ aluout 00000001
 cycle_counter 0000007e
 ctl_state 00000006
 dma_raddr 00000403
-dma_reg 00000005
+dma_reg 0000001a
 dma_waddr 000004cb
 dma_cnt 00000003
 dma_state 00000001
@@ -3193,7 +3193,7 @@ aluout 00000001
 cycle_counter 0000007f
 ctl_state 00000001
 dma_raddr 00000403
-dma_reg 00000005
+dma_reg 0000001a
 dma_waddr 000004cb
 dma_cnt 00000003
 dma_state 00000001
@@ -3218,7 +3218,7 @@ aluout 00000001
 cycle_counter 00000080
 ctl_state 00000002
 dma_raddr 00000403
-dma_reg 00000005
+dma_reg 0000001a
 dma_waddr 000004cb
 dma_cnt 00000003
 dma_state 00000001
@@ -3243,7 +3243,7 @@ aluout 00000001
 cycle_counter 00000081
 ctl_state 00000003
 dma_raddr 00000403
-dma_reg 00000005
+dma_reg 0000001a
 dma_waddr 000004cb
 dma_cnt 00000003
 dma_state 00000002
@@ -3268,7 +3268,7 @@ aluout 00000001
 cycle_counter 00000082
 ctl_state 00000004
 dma_raddr 00000404
-dma_reg 0000000d
+dma_reg 0000001b
 dma_waddr 000004cb
 dma_cnt 00000003
 dma_state 00000003
@@ -3293,7 +3293,7 @@ aluout 00000001
 cycle_counter 00000083
 ctl_state 00000005
 dma_raddr 00000404
-dma_reg 0000000d
+dma_reg 0000001b
 dma_waddr 000004cc
 dma_cnt 00000002
 dma_state 00000001
@@ -3318,7 +3318,7 @@ aluout 00000000
 cycle_counter 00000084
 ctl_state 00000006
 dma_raddr 00000404
-dma_reg 0000000d
+dma_reg 0000001b
 dma_waddr 000004cc
 dma_cnt 00000002
 dma_state 00000002
@@ -3343,7 +3343,7 @@ aluout 00000000
 cycle_counter 00000085
 ctl_state 00000001
 dma_raddr 00000405
-dma_reg 0000000d
+dma_reg 0000001c
 dma_waddr 000004cc
 dma_cnt 00000002
 dma_state 00000003
@@ -3368,7 +3368,7 @@ aluout 00000000
 cycle_counter 00000086
 ctl_state 00000002
 dma_raddr 00000405
-dma_reg 0000000d
+dma_reg 0000001c
 dma_waddr 000004cc
 dma_cnt 00000002
 dma_state 00000003
@@ -3393,7 +3393,7 @@ aluout 00000000
 cycle_counter 00000087
 ctl_state 00000003
 dma_raddr 00000405
-dma_reg 0000000d
+dma_reg 0000001c
 dma_waddr 000004cd
 dma_cnt 00000001
 dma_state 00000001
@@ -3418,7 +3418,7 @@ aluout 00000000
 cycle_counter 00000088
 ctl_state 00000004
 dma_raddr 00000405
-dma_reg 0000000d
+dma_reg 0000001c
 dma_waddr 000004cd
 dma_cnt 00000001
 dma_state 00000002
@@ -3443,7 +3443,7 @@ aluout 00000000
 cycle_counter 00000089
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004cd
 dma_cnt 00000001
 dma_state 00000003
@@ -3468,7 +3468,7 @@ aluout 00000000
 cycle_counter 0000008a
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004cd
 dma_cnt 00000001
 dma_state 00000003
@@ -3493,7 +3493,7 @@ aluout 00000000
 cycle_counter 0000008b
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3518,7 +3518,7 @@ aluout 00000000
 cycle_counter 0000008c
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3543,7 +3543,7 @@ aluout 00000000
 cycle_counter 0000008d
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3568,7 +3568,7 @@ aluout 00000000
 cycle_counter 0000008e
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3593,7 +3593,7 @@ aluout 00000000
 cycle_counter 0000008f
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3618,7 +3618,7 @@ aluout 00000000
 cycle_counter 00000090
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3643,7 +3643,7 @@ aluout 00000000
 cycle_counter 00000091
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3668,7 +3668,7 @@ aluout 00000000
 cycle_counter 00000092
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3693,7 +3693,7 @@ aluout 00000000
 cycle_counter 00000093
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3718,7 +3718,7 @@ aluout 00000000
 cycle_counter 00000094
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3743,7 +3743,7 @@ aluout 00000000
 cycle_counter 00000095
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3768,7 +3768,7 @@ aluout 00000000
 cycle_counter 00000096
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3793,7 +3793,7 @@ aluout 00000000
 cycle_counter 00000097
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3818,7 +3818,7 @@ aluout 00000000
 cycle_counter 00000098
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3843,7 +3843,7 @@ aluout 00000000
 cycle_counter 00000099
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3868,7 +3868,7 @@ aluout 00000000
 cycle_counter 0000009a
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3893,7 +3893,7 @@ aluout 00000000
 cycle_counter 0000009b
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3918,7 +3918,7 @@ aluout 000003eb
 cycle_counter 0000009c
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3943,7 +3943,7 @@ aluout 000003eb
 cycle_counter 0000009d
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3968,7 +3968,7 @@ aluout 000003eb
 cycle_counter 0000009e
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -3993,7 +3993,7 @@ aluout 000003eb
 cycle_counter 0000009f
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4018,7 +4018,7 @@ aluout 000003eb
 cycle_counter 000000a0
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4043,7 +4043,7 @@ aluout 000003eb
 cycle_counter 000000a1
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4068,7 +4068,7 @@ aluout 0000044f
 cycle_counter 000000a2
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4093,7 +4093,7 @@ aluout 0000044f
 cycle_counter 000000a3
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4118,7 +4118,7 @@ aluout 0000044f
 cycle_counter 000000a4
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4143,7 +4143,7 @@ aluout 0000044f
 cycle_counter 000000a5
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4168,7 +4168,7 @@ aluout 0000044f
 cycle_counter 000000a6
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4193,7 +4193,7 @@ aluout 0000044f
 cycle_counter 000000a7
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4218,7 +4218,7 @@ aluout 00000007
 cycle_counter 000000a8
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4243,7 +4243,7 @@ aluout 00000007
 cycle_counter 000000a9
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4268,7 +4268,7 @@ aluout 00000007
 cycle_counter 000000aa
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4293,7 +4293,7 @@ aluout 00000007
 cycle_counter 000000ab
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4318,7 +4318,7 @@ aluout 00000007
 cycle_counter 000000ac
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4343,7 +4343,7 @@ aluout 00000007
 cycle_counter 000000ad
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4368,7 +4368,7 @@ aluout 00000001
 cycle_counter 000000ae
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4393,7 +4393,7 @@ aluout 00000001
 cycle_counter 000000af
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4418,7 +4418,7 @@ aluout 00000001
 cycle_counter 000000b0
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4443,7 +4443,7 @@ aluout 00000001
 cycle_counter 000000b1
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4468,7 +4468,7 @@ aluout 00000001
 cycle_counter 000000b2
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4493,7 +4493,7 @@ aluout 00000001
 cycle_counter 000000b3
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4518,7 +4518,7 @@ aluout 00000000
 cycle_counter 000000b4
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4543,7 +4543,7 @@ aluout 00000000
 cycle_counter 000000b5
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4568,7 +4568,7 @@ aluout 00000000
 cycle_counter 000000b6
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4593,7 +4593,7 @@ aluout 00000000
 cycle_counter 000000b7
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4618,7 +4618,7 @@ aluout 00000000
 cycle_counter 000000b8
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4643,7 +4643,7 @@ aluout 00000000
 cycle_counter 000000b9
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4668,7 +4668,7 @@ aluout 00000000
 cycle_counter 000000ba
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4693,7 +4693,7 @@ aluout 00000000
 cycle_counter 000000bb
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4718,7 +4718,7 @@ aluout 00000000
 cycle_counter 000000bc
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4743,7 +4743,7 @@ aluout 00000000
 cycle_counter 000000bd
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4768,7 +4768,7 @@ aluout 00000000
 cycle_counter 000000be
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4793,7 +4793,7 @@ aluout 00000000
 cycle_counter 000000bf
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4818,7 +4818,7 @@ aluout 00000000
 cycle_counter 000000c0
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4843,7 +4843,7 @@ aluout 00000000
 cycle_counter 000000c1
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4868,7 +4868,7 @@ aluout 00000000
 cycle_counter 000000c2
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4893,7 +4893,7 @@ aluout 00000000
 cycle_counter 000000c3
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4918,7 +4918,7 @@ aluout 00000000
 cycle_counter 000000c4
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4943,7 +4943,7 @@ aluout 00000000
 cycle_counter 000000c5
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4968,7 +4968,7 @@ aluout 00000000
 cycle_counter 000000c6
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -4993,7 +4993,7 @@ aluout 00000000
 cycle_counter 000000c7
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5018,7 +5018,7 @@ aluout 00000000
 cycle_counter 000000c8
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5043,7 +5043,7 @@ aluout 00000000
 cycle_counter 000000c9
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5068,7 +5068,7 @@ aluout 00000000
 cycle_counter 000000ca
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5093,7 +5093,7 @@ aluout 00000000
 cycle_counter 000000cb
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5118,7 +5118,7 @@ aluout 000003ec
 cycle_counter 000000cc
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5143,7 +5143,7 @@ aluout 000003ec
 cycle_counter 000000cd
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5168,7 +5168,7 @@ aluout 000003ec
 cycle_counter 000000ce
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5193,7 +5193,7 @@ aluout 000003ec
 cycle_counter 000000cf
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5218,7 +5218,7 @@ aluout 000003ec
 cycle_counter 000000d0
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5243,7 +5243,7 @@ aluout 000003ec
 cycle_counter 000000d1
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5268,7 +5268,7 @@ aluout 00000450
 cycle_counter 000000d2
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5293,7 +5293,7 @@ aluout 00000450
 cycle_counter 000000d3
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5318,7 +5318,7 @@ aluout 00000450
 cycle_counter 000000d4
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5343,7 +5343,7 @@ aluout 00000450
 cycle_counter 000000d5
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5368,7 +5368,7 @@ aluout 00000450
 cycle_counter 000000d6
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5393,7 +5393,7 @@ aluout 00000450
 cycle_counter 000000d7
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5418,7 +5418,7 @@ aluout 00000006
 cycle_counter 000000d8
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5443,7 +5443,7 @@ aluout 00000006
 cycle_counter 000000d9
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5468,7 +5468,7 @@ aluout 00000006
 cycle_counter 000000da
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5493,7 +5493,7 @@ aluout 00000006
 cycle_counter 000000db
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5518,7 +5518,7 @@ aluout 00000006
 cycle_counter 000000dc
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5543,7 +5543,7 @@ aluout 00000006
 cycle_counter 000000dd
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5568,7 +5568,7 @@ aluout 00000001
 cycle_counter 000000de
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5593,7 +5593,7 @@ aluout 00000001
 cycle_counter 000000df
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5618,7 +5618,7 @@ aluout 00000001
 cycle_counter 000000e0
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5643,7 +5643,7 @@ aluout 00000001
 cycle_counter 000000e1
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5668,7 +5668,7 @@ aluout 00000001
 cycle_counter 000000e2
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5693,7 +5693,7 @@ aluout 00000001
 cycle_counter 000000e3
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5718,7 +5718,7 @@ aluout 00000000
 cycle_counter 000000e4
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5743,7 +5743,7 @@ aluout 00000000
 cycle_counter 000000e5
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5768,7 +5768,7 @@ aluout 00000000
 cycle_counter 000000e6
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5793,7 +5793,7 @@ aluout 00000000
 cycle_counter 000000e7
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5818,7 +5818,7 @@ aluout 00000000
 cycle_counter 000000e8
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5843,7 +5843,7 @@ aluout 00000000
 cycle_counter 000000e9
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5868,7 +5868,7 @@ aluout 00000000
 cycle_counter 000000ea
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5893,7 +5893,7 @@ aluout 00000000
 cycle_counter 000000eb
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5918,7 +5918,7 @@ aluout 00000000
 cycle_counter 000000ec
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5943,7 +5943,7 @@ aluout 00000000
 cycle_counter 000000ed
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5968,7 +5968,7 @@ aluout 00000000
 cycle_counter 000000ee
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -5993,7 +5993,7 @@ aluout 00000000
 cycle_counter 000000ef
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6018,7 +6018,7 @@ aluout 00000000
 cycle_counter 000000f0
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6043,7 +6043,7 @@ aluout 00000000
 cycle_counter 000000f1
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6068,7 +6068,7 @@ aluout 00000000
 cycle_counter 000000f2
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6093,7 +6093,7 @@ aluout 00000000
 cycle_counter 000000f3
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6118,7 +6118,7 @@ aluout 00000000
 cycle_counter 000000f4
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6143,7 +6143,7 @@ aluout 00000000
 cycle_counter 000000f5
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6168,7 +6168,7 @@ aluout 00000000
 cycle_counter 000000f6
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6193,7 +6193,7 @@ aluout 00000000
 cycle_counter 000000f7
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6218,7 +6218,7 @@ aluout 00000000
 cycle_counter 000000f8
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6243,7 +6243,7 @@ aluout 00000000
 cycle_counter 000000f9
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6268,7 +6268,7 @@ aluout 00000000
 cycle_counter 000000fa
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6293,7 +6293,7 @@ aluout 00000000
 cycle_counter 000000fb
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6318,7 +6318,7 @@ aluout 000003ed
 cycle_counter 000000fc
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6343,7 +6343,7 @@ aluout 000003ed
 cycle_counter 000000fd
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6368,7 +6368,7 @@ aluout 000003ed
 cycle_counter 000000fe
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6393,7 +6393,7 @@ aluout 000003ed
 cycle_counter 000000ff
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6418,7 +6418,7 @@ aluout 000003ed
 cycle_counter 00000100
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6443,7 +6443,7 @@ aluout 000003ed
 cycle_counter 00000101
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6468,7 +6468,7 @@ aluout 00000451
 cycle_counter 00000102
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6493,7 +6493,7 @@ aluout 00000451
 cycle_counter 00000103
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6518,7 +6518,7 @@ aluout 00000451
 cycle_counter 00000104
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6543,7 +6543,7 @@ aluout 00000451
 cycle_counter 00000105
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6568,7 +6568,7 @@ aluout 00000451
 cycle_counter 00000106
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6593,7 +6593,7 @@ aluout 00000451
 cycle_counter 00000107
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6618,7 +6618,7 @@ aluout 00000005
 cycle_counter 00000108
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6643,7 +6643,7 @@ aluout 00000005
 cycle_counter 00000109
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6668,7 +6668,7 @@ aluout 00000005
 cycle_counter 0000010a
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6693,7 +6693,7 @@ aluout 00000005
 cycle_counter 0000010b
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6718,7 +6718,7 @@ aluout 00000005
 cycle_counter 0000010c
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6743,7 +6743,7 @@ aluout 00000005
 cycle_counter 0000010d
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6768,7 +6768,7 @@ aluout 00000001
 cycle_counter 0000010e
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6793,7 +6793,7 @@ aluout 00000001
 cycle_counter 0000010f
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6818,7 +6818,7 @@ aluout 00000001
 cycle_counter 00000110
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6843,7 +6843,7 @@ aluout 00000001
 cycle_counter 00000111
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6868,7 +6868,7 @@ aluout 00000001
 cycle_counter 00000112
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6893,7 +6893,7 @@ aluout 00000001
 cycle_counter 00000113
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6918,7 +6918,7 @@ aluout 00000000
 cycle_counter 00000114
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6943,7 +6943,7 @@ aluout 00000000
 cycle_counter 00000115
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6968,7 +6968,7 @@ aluout 00000000
 cycle_counter 00000116
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -6993,7 +6993,7 @@ aluout 00000000
 cycle_counter 00000117
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7018,7 +7018,7 @@ aluout 00000000
 cycle_counter 00000118
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7043,7 +7043,7 @@ aluout 00000000
 cycle_counter 00000119
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7068,7 +7068,7 @@ aluout 00000000
 cycle_counter 0000011a
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7093,7 +7093,7 @@ aluout 00000000
 cycle_counter 0000011b
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7118,7 +7118,7 @@ aluout 00000000
 cycle_counter 0000011c
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7143,7 +7143,7 @@ aluout 00000000
 cycle_counter 0000011d
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7168,7 +7168,7 @@ aluout 00000000
 cycle_counter 0000011e
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7193,7 +7193,7 @@ aluout 00000000
 cycle_counter 0000011f
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7218,7 +7218,7 @@ aluout 00000000
 cycle_counter 00000120
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7243,7 +7243,7 @@ aluout 00000000
 cycle_counter 00000121
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7268,7 +7268,7 @@ aluout 00000000
 cycle_counter 00000122
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7293,7 +7293,7 @@ aluout 00000000
 cycle_counter 00000123
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7318,7 +7318,7 @@ aluout 00000000
 cycle_counter 00000124
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7343,7 +7343,7 @@ aluout 00000000
 cycle_counter 00000125
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7368,7 +7368,7 @@ aluout 00000000
 cycle_counter 00000126
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7393,7 +7393,7 @@ aluout 00000000
 cycle_counter 00000127
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7418,7 +7418,7 @@ aluout 00000000
 cycle_counter 00000128
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7443,7 +7443,7 @@ aluout 00000000
 cycle_counter 00000129
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7468,7 +7468,7 @@ aluout 00000000
 cycle_counter 0000012a
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7493,7 +7493,7 @@ aluout 00000000
 cycle_counter 0000012b
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7518,7 +7518,7 @@ aluout 000003ee
 cycle_counter 0000012c
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7543,7 +7543,7 @@ aluout 000003ee
 cycle_counter 0000012d
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7568,7 +7568,7 @@ aluout 000003ee
 cycle_counter 0000012e
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7593,7 +7593,7 @@ aluout 000003ee
 cycle_counter 0000012f
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7618,7 +7618,7 @@ aluout 000003ee
 cycle_counter 00000130
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7643,7 +7643,7 @@ aluout 000003ee
 cycle_counter 00000131
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7668,7 +7668,7 @@ aluout 00000452
 cycle_counter 00000132
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7693,7 +7693,7 @@ aluout 00000452
 cycle_counter 00000133
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7718,7 +7718,7 @@ aluout 00000452
 cycle_counter 00000134
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7743,7 +7743,7 @@ aluout 00000452
 cycle_counter 00000135
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7768,7 +7768,7 @@ aluout 00000452
 cycle_counter 00000136
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7793,7 +7793,7 @@ aluout 00000452
 cycle_counter 00000137
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7818,7 +7818,7 @@ aluout 00000004
 cycle_counter 00000138
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7843,7 +7843,7 @@ aluout 00000004
 cycle_counter 00000139
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7868,7 +7868,7 @@ aluout 00000004
 cycle_counter 0000013a
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7893,7 +7893,7 @@ aluout 00000004
 cycle_counter 0000013b
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7918,7 +7918,7 @@ aluout 00000004
 cycle_counter 0000013c
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7943,7 +7943,7 @@ aluout 00000004
 cycle_counter 0000013d
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7968,7 +7968,7 @@ aluout 00000001
 cycle_counter 0000013e
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -7993,7 +7993,7 @@ aluout 00000001
 cycle_counter 0000013f
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8018,7 +8018,7 @@ aluout 00000001
 cycle_counter 00000140
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8043,7 +8043,7 @@ aluout 00000001
 cycle_counter 00000141
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8068,7 +8068,7 @@ aluout 00000001
 cycle_counter 00000142
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8093,7 +8093,7 @@ aluout 00000001
 cycle_counter 00000143
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8118,7 +8118,7 @@ aluout 00000000
 cycle_counter 00000144
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8143,7 +8143,7 @@ aluout 00000000
 cycle_counter 00000145
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8168,7 +8168,7 @@ aluout 00000000
 cycle_counter 00000146
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8193,7 +8193,7 @@ aluout 00000000
 cycle_counter 00000147
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8218,7 +8218,7 @@ aluout 00000000
 cycle_counter 00000148
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8243,7 +8243,7 @@ aluout 00000000
 cycle_counter 00000149
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8268,7 +8268,7 @@ aluout 00000000
 cycle_counter 0000014a
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8293,7 +8293,7 @@ aluout 00000000
 cycle_counter 0000014b
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8318,7 +8318,7 @@ aluout 00000000
 cycle_counter 0000014c
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8343,7 +8343,7 @@ aluout 00000000
 cycle_counter 0000014d
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8368,7 +8368,7 @@ aluout 00000000
 cycle_counter 0000014e
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8393,7 +8393,7 @@ aluout 00000000
 cycle_counter 0000014f
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8418,7 +8418,7 @@ aluout 00000000
 cycle_counter 00000150
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8443,7 +8443,7 @@ aluout 00000000
 cycle_counter 00000151
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8468,7 +8468,7 @@ aluout 00000000
 cycle_counter 00000152
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8493,7 +8493,7 @@ aluout 00000000
 cycle_counter 00000153
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8518,7 +8518,7 @@ aluout 00000000
 cycle_counter 00000154
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8543,7 +8543,7 @@ aluout 00000000
 cycle_counter 00000155
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8568,7 +8568,7 @@ aluout 00000000
 cycle_counter 00000156
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8593,7 +8593,7 @@ aluout 00000000
 cycle_counter 00000157
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8618,7 +8618,7 @@ aluout 00000000
 cycle_counter 00000158
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8643,7 +8643,7 @@ aluout 00000000
 cycle_counter 00000159
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8668,7 +8668,7 @@ aluout 00000000
 cycle_counter 0000015a
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8693,7 +8693,7 @@ aluout 00000000
 cycle_counter 0000015b
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8718,7 +8718,7 @@ aluout 000003ef
 cycle_counter 0000015c
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8743,7 +8743,7 @@ aluout 000003ef
 cycle_counter 0000015d
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8768,7 +8768,7 @@ aluout 000003ef
 cycle_counter 0000015e
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8793,7 +8793,7 @@ aluout 000003ef
 cycle_counter 0000015f
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8818,7 +8818,7 @@ aluout 000003ef
 cycle_counter 00000160
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8843,7 +8843,7 @@ aluout 000003ef
 cycle_counter 00000161
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8868,7 +8868,7 @@ aluout 00000453
 cycle_counter 00000162
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8893,7 +8893,7 @@ aluout 00000453
 cycle_counter 00000163
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8918,7 +8918,7 @@ aluout 00000453
 cycle_counter 00000164
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8943,7 +8943,7 @@ aluout 00000453
 cycle_counter 00000165
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8968,7 +8968,7 @@ aluout 00000453
 cycle_counter 00000166
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -8993,7 +8993,7 @@ aluout 00000453
 cycle_counter 00000167
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9018,7 +9018,7 @@ aluout 00000003
 cycle_counter 00000168
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9043,7 +9043,7 @@ aluout 00000003
 cycle_counter 00000169
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9068,7 +9068,7 @@ aluout 00000003
 cycle_counter 0000016a
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9093,7 +9093,7 @@ aluout 00000003
 cycle_counter 0000016b
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9118,7 +9118,7 @@ aluout 00000003
 cycle_counter 0000016c
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9143,7 +9143,7 @@ aluout 00000003
 cycle_counter 0000016d
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9168,7 +9168,7 @@ aluout 00000001
 cycle_counter 0000016e
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9193,7 +9193,7 @@ aluout 00000001
 cycle_counter 0000016f
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9218,7 +9218,7 @@ aluout 00000001
 cycle_counter 00000170
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9243,7 +9243,7 @@ aluout 00000001
 cycle_counter 00000171
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9268,7 +9268,7 @@ aluout 00000001
 cycle_counter 00000172
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9293,7 +9293,7 @@ aluout 00000001
 cycle_counter 00000173
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9318,7 +9318,7 @@ aluout 00000000
 cycle_counter 00000174
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9343,7 +9343,7 @@ aluout 00000000
 cycle_counter 00000175
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9368,7 +9368,7 @@ aluout 00000000
 cycle_counter 00000176
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9393,7 +9393,7 @@ aluout 00000000
 cycle_counter 00000177
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9418,7 +9418,7 @@ aluout 00000000
 cycle_counter 00000178
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9443,7 +9443,7 @@ aluout 00000000
 cycle_counter 00000179
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9468,7 +9468,7 @@ aluout 00000000
 cycle_counter 0000017a
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9493,7 +9493,7 @@ aluout 00000000
 cycle_counter 0000017b
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9518,7 +9518,7 @@ aluout 00000000
 cycle_counter 0000017c
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9543,7 +9543,7 @@ aluout 00000000
 cycle_counter 0000017d
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9568,7 +9568,7 @@ aluout 00000000
 cycle_counter 0000017e
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9593,7 +9593,7 @@ aluout 00000000
 cycle_counter 0000017f
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9618,7 +9618,7 @@ aluout 00000000
 cycle_counter 00000180
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9643,7 +9643,7 @@ aluout 00000000
 cycle_counter 00000181
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9668,7 +9668,7 @@ aluout 00000000
 cycle_counter 00000182
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9693,7 +9693,7 @@ aluout 00000000
 cycle_counter 00000183
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9718,7 +9718,7 @@ aluout 00000000
 cycle_counter 00000184
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9743,7 +9743,7 @@ aluout 00000000
 cycle_counter 00000185
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9768,7 +9768,7 @@ aluout 00000000
 cycle_counter 00000186
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9793,7 +9793,7 @@ aluout 00000000
 cycle_counter 00000187
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9818,7 +9818,7 @@ aluout 00000000
 cycle_counter 00000188
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9843,7 +9843,7 @@ aluout 00000000
 cycle_counter 00000189
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9868,7 +9868,7 @@ aluout 00000000
 cycle_counter 0000018a
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9893,7 +9893,7 @@ aluout 00000000
 cycle_counter 0000018b
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9918,7 +9918,7 @@ aluout 000003f0
 cycle_counter 0000018c
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9943,7 +9943,7 @@ aluout 000003f0
 cycle_counter 0000018d
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9968,7 +9968,7 @@ aluout 000003f0
 cycle_counter 0000018e
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -9993,7 +9993,7 @@ aluout 000003f0
 cycle_counter 0000018f
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10018,7 +10018,7 @@ aluout 000003f0
 cycle_counter 00000190
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10043,7 +10043,7 @@ aluout 000003f0
 cycle_counter 00000191
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10068,7 +10068,7 @@ aluout 00000454
 cycle_counter 00000192
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10093,7 +10093,7 @@ aluout 00000454
 cycle_counter 00000193
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10118,7 +10118,7 @@ aluout 00000454
 cycle_counter 00000194
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10143,7 +10143,7 @@ aluout 00000454
 cycle_counter 00000195
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10168,7 +10168,7 @@ aluout 00000454
 cycle_counter 00000196
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10193,7 +10193,7 @@ aluout 00000454
 cycle_counter 00000197
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10218,7 +10218,7 @@ aluout 00000002
 cycle_counter 00000198
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10243,7 +10243,7 @@ aluout 00000002
 cycle_counter 00000199
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10268,7 +10268,7 @@ aluout 00000002
 cycle_counter 0000019a
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10293,7 +10293,7 @@ aluout 00000002
 cycle_counter 0000019b
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10318,7 +10318,7 @@ aluout 00000002
 cycle_counter 0000019c
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10343,7 +10343,7 @@ aluout 00000002
 cycle_counter 0000019d
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10368,7 +10368,7 @@ aluout 00000001
 cycle_counter 0000019e
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10393,7 +10393,7 @@ aluout 00000001
 cycle_counter 0000019f
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10418,7 +10418,7 @@ aluout 00000001
 cycle_counter 000001a0
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10443,7 +10443,7 @@ aluout 00000001
 cycle_counter 000001a1
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10468,7 +10468,7 @@ aluout 00000001
 cycle_counter 000001a2
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10493,7 +10493,7 @@ aluout 00000001
 cycle_counter 000001a3
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10518,7 +10518,7 @@ aluout 00000000
 cycle_counter 000001a4
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10543,7 +10543,7 @@ aluout 00000000
 cycle_counter 000001a5
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10568,7 +10568,7 @@ aluout 00000000
 cycle_counter 000001a6
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10593,7 +10593,7 @@ aluout 00000000
 cycle_counter 000001a7
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10618,7 +10618,7 @@ aluout 00000000
 cycle_counter 000001a8
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10643,7 +10643,7 @@ aluout 00000000
 cycle_counter 000001a9
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10668,7 +10668,7 @@ aluout 00000000
 cycle_counter 000001aa
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10693,7 +10693,7 @@ aluout 00000000
 cycle_counter 000001ab
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10718,7 +10718,7 @@ aluout 00000000
 cycle_counter 000001ac
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10743,7 +10743,7 @@ aluout 00000000
 cycle_counter 000001ad
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10768,7 +10768,7 @@ aluout 00000000
 cycle_counter 000001ae
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10793,7 +10793,7 @@ aluout 00000000
 cycle_counter 000001af
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10818,7 +10818,7 @@ aluout 00000000
 cycle_counter 000001b0
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10843,7 +10843,7 @@ aluout 00000000
 cycle_counter 000001b1
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10868,7 +10868,7 @@ aluout 00000000
 cycle_counter 000001b2
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10893,7 +10893,7 @@ aluout 00000000
 cycle_counter 000001b3
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10918,7 +10918,7 @@ aluout 00000000
 cycle_counter 000001b4
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10943,7 +10943,7 @@ aluout 00000000
 cycle_counter 000001b5
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10968,7 +10968,7 @@ aluout 00000000
 cycle_counter 000001b6
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -10993,7 +10993,7 @@ aluout 00000000
 cycle_counter 000001b7
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11018,7 +11018,7 @@ aluout 00000000
 cycle_counter 000001b8
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11043,7 +11043,7 @@ aluout 00000000
 cycle_counter 000001b9
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11068,7 +11068,7 @@ aluout 00000000
 cycle_counter 000001ba
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11093,7 +11093,7 @@ aluout 00000000
 cycle_counter 000001bb
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11118,7 +11118,7 @@ aluout 000003f1
 cycle_counter 000001bc
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11143,7 +11143,7 @@ aluout 000003f1
 cycle_counter 000001bd
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11168,7 +11168,7 @@ aluout 000003f1
 cycle_counter 000001be
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11193,7 +11193,7 @@ aluout 000003f1
 cycle_counter 000001bf
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11218,7 +11218,7 @@ aluout 000003f1
 cycle_counter 000001c0
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11243,7 +11243,7 @@ aluout 000003f1
 cycle_counter 000001c1
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11268,7 +11268,7 @@ aluout 00000455
 cycle_counter 000001c2
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11293,7 +11293,7 @@ aluout 00000455
 cycle_counter 000001c3
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11318,7 +11318,7 @@ aluout 00000455
 cycle_counter 000001c4
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11343,7 +11343,7 @@ aluout 00000455
 cycle_counter 000001c5
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11368,7 +11368,7 @@ aluout 00000455
 cycle_counter 000001c6
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11393,7 +11393,7 @@ aluout 00000455
 cycle_counter 000001c7
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11418,7 +11418,7 @@ aluout 00000001
 cycle_counter 000001c8
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11443,7 +11443,7 @@ aluout 00000001
 cycle_counter 000001c9
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11468,7 +11468,7 @@ aluout 00000001
 cycle_counter 000001ca
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11493,7 +11493,7 @@ aluout 00000001
 cycle_counter 000001cb
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11518,7 +11518,7 @@ aluout 00000001
 cycle_counter 000001cc
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11543,7 +11543,7 @@ aluout 00000001
 cycle_counter 000001cd
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11568,7 +11568,7 @@ aluout 00000001
 cycle_counter 000001ce
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11593,7 +11593,7 @@ aluout 00000001
 cycle_counter 000001cf
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11618,7 +11618,7 @@ aluout 00000001
 cycle_counter 000001d0
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11643,7 +11643,7 @@ aluout 00000001
 cycle_counter 000001d1
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11668,7 +11668,7 @@ aluout 00000001
 cycle_counter 000001d2
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11693,7 +11693,7 @@ aluout 00000001
 cycle_counter 000001d3
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11718,7 +11718,7 @@ aluout 00000000
 cycle_counter 000001d4
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11743,7 +11743,7 @@ aluout 00000000
 cycle_counter 000001d5
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11768,7 +11768,7 @@ aluout 00000000
 cycle_counter 000001d6
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11793,7 +11793,7 @@ aluout 00000000
 cycle_counter 000001d7
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11818,7 +11818,7 @@ aluout 00000000
 cycle_counter 000001d8
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11843,7 +11843,7 @@ aluout 00000000
 cycle_counter 000001d9
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11868,7 +11868,7 @@ aluout 00000000
 cycle_counter 000001da
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11893,7 +11893,7 @@ aluout 00000000
 cycle_counter 000001db
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11918,7 +11918,7 @@ aluout 00000000
 cycle_counter 000001dc
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11943,7 +11943,7 @@ aluout 00000000
 cycle_counter 000001dd
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11968,7 +11968,7 @@ aluout 00000000
 cycle_counter 000001de
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -11993,7 +11993,7 @@ aluout 00000000
 cycle_counter 000001df
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12018,7 +12018,7 @@ aluout 00000000
 cycle_counter 000001e0
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12043,7 +12043,7 @@ aluout 00000000
 cycle_counter 000001e1
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12068,7 +12068,7 @@ aluout 00000000
 cycle_counter 000001e2
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12093,7 +12093,7 @@ aluout 00000000
 cycle_counter 000001e3
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12118,7 +12118,7 @@ aluout 00000000
 cycle_counter 000001e4
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12143,7 +12143,7 @@ aluout 00000000
 cycle_counter 000001e5
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12168,7 +12168,7 @@ aluout 00000000
 cycle_counter 000001e6
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12193,7 +12193,7 @@ aluout 00000000
 cycle_counter 000001e7
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12218,7 +12218,7 @@ aluout 00000000
 cycle_counter 000001e8
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12243,7 +12243,7 @@ aluout 00000000
 cycle_counter 000001e9
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12268,7 +12268,7 @@ aluout 00000000
 cycle_counter 000001ea
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12293,7 +12293,7 @@ aluout 00000000
 cycle_counter 000001eb
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12318,7 +12318,7 @@ aluout 000003f2
 cycle_counter 000001ec
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12343,7 +12343,7 @@ aluout 000003f2
 cycle_counter 000001ed
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12368,7 +12368,7 @@ aluout 000003f2
 cycle_counter 000001ee
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12393,7 +12393,7 @@ aluout 000003f2
 cycle_counter 000001ef
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12418,7 +12418,7 @@ aluout 000003f2
 cycle_counter 000001f0
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12443,7 +12443,7 @@ aluout 000003f2
 cycle_counter 000001f1
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12468,7 +12468,7 @@ aluout 00000456
 cycle_counter 000001f2
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12493,7 +12493,7 @@ aluout 00000456
 cycle_counter 000001f3
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12518,7 +12518,7 @@ aluout 00000456
 cycle_counter 000001f4
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12543,7 +12543,7 @@ aluout 00000456
 cycle_counter 000001f5
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12568,7 +12568,7 @@ aluout 00000456
 cycle_counter 000001f6
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12593,7 +12593,7 @@ aluout 00000456
 cycle_counter 000001f7
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12618,7 +12618,7 @@ aluout 00000000
 cycle_counter 000001f8
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12643,7 +12643,7 @@ aluout 00000000
 cycle_counter 000001f9
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12668,7 +12668,7 @@ aluout 00000000
 cycle_counter 000001fa
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12693,7 +12693,7 @@ aluout 00000000
 cycle_counter 000001fb
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12718,7 +12718,7 @@ aluout 00000000
 cycle_counter 000001fc
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12743,7 +12743,7 @@ aluout 00000000
 cycle_counter 000001fd
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12768,7 +12768,7 @@ aluout 00000001
 cycle_counter 000001fe
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12793,7 +12793,7 @@ aluout 00000001
 cycle_counter 000001ff
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12818,7 +12818,7 @@ aluout 00000001
 cycle_counter 00000200
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12843,7 +12843,7 @@ aluout 00000001
 cycle_counter 00000201
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12868,7 +12868,7 @@ aluout 00000001
 cycle_counter 00000202
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12893,7 +12893,7 @@ aluout 00000001
 cycle_counter 00000203
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12918,7 +12918,7 @@ aluout 00000001
 cycle_counter 00000204
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12943,7 +12943,7 @@ aluout 00000001
 cycle_counter 00000205
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12968,7 +12968,7 @@ aluout 00000001
 cycle_counter 00000206
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -12993,7 +12993,7 @@ aluout 00000001
 cycle_counter 00000207
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13018,7 +13018,7 @@ aluout 00000001
 cycle_counter 00000208
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13043,7 +13043,7 @@ aluout 00000001
 cycle_counter 00000209
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13068,7 +13068,7 @@ aluout 00000001
 cycle_counter 0000020a
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13093,7 +13093,7 @@ aluout 00000001
 cycle_counter 0000020b
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13118,7 +13118,7 @@ aluout 00000001
 cycle_counter 0000020c
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13143,7 +13143,7 @@ aluout 00000001
 cycle_counter 0000020d
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13168,7 +13168,7 @@ aluout 00000001
 cycle_counter 0000020e
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13193,7 +13193,7 @@ aluout 00000001
 cycle_counter 0000020f
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13218,7 +13218,7 @@ aluout 00000000
 cycle_counter 00000210
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13243,7 +13243,7 @@ aluout 00000000
 cycle_counter 00000211
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13268,7 +13268,7 @@ aluout 00000000
 cycle_counter 00000212
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13293,7 +13293,7 @@ aluout 00000000
 cycle_counter 00000213
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13318,7 +13318,7 @@ aluout 00000000
 cycle_counter 00000214
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13343,7 +13343,7 @@ aluout 00000000
 cycle_counter 00000215
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13368,7 +13368,7 @@ aluout fffffffe
 cycle_counter 00000216
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13393,7 +13393,7 @@ aluout fffffffe
 cycle_counter 00000217
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13418,7 +13418,7 @@ aluout fffffffe
 cycle_counter 00000218
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13443,7 +13443,7 @@ aluout fffffffe
 cycle_counter 00000219
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13468,7 +13468,7 @@ aluout fffffffe
 cycle_counter 0000021a
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13493,7 +13493,7 @@ aluout fffffffe
 cycle_counter 0000021b
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13518,7 +13518,7 @@ aluout 00000001
 cycle_counter 0000021c
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13543,7 +13543,7 @@ aluout 00000001
 cycle_counter 0000021d
 ctl_state 00000001
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13568,7 +13568,7 @@ aluout 00000001
 cycle_counter 0000021e
 ctl_state 00000002
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13593,7 +13593,7 @@ aluout 00000001
 cycle_counter 0000021f
 ctl_state 00000003
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13618,7 +13618,7 @@ aluout 00000001
 cycle_counter 00000220
 ctl_state 00000004
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13643,7 +13643,7 @@ aluout 00000001
 cycle_counter 00000221
 ctl_state 00000005
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000
@@ -13668,7 +13668,7 @@ aluout 00000001
 cycle_counter 00000222
 ctl_state 00000006
 dma_raddr 00000406
-dma_reg 00000000
+dma_reg 0000001d
 dma_waddr 000004ce
 dma_cnt 00000000
 dma_state 00000000

@@ -76,9 +76,13 @@ module CTL(
 	verilog_trace_fp = $fopen("verilog_trace.txt", "w");
      end
 
-     assign sram_EN = (ctl_state == `CTL_STATE_FETCH0) | ((ctl_state == `CTL_STATE_EXEC0) & (opcode == `LD)) | 
-	              ((ctl_state == `CTL_STATE_EXEC1) & (opcode == `ST));
-     assign sram_WE = ((ctl_state == `CTL_STATE_EXEC1) & (opcode == `ST));
+     assign sram_EN = (ctl_state == `CTL_STATE_FETCH0) |
+                      ((ctl_state == `CTL_STATE_EXEC0) & (opcode == `LD)) | 
+	              ((ctl_state == `CTL_STATE_EXEC1) & (opcode == `ST)) |
+	              (dma_enable & (dma_state == `DMA_STATE_READ)) |
+	              (dma_enable & (dma_state == `DMA_STATE_WRITE));
+     assign sram_WE = ((ctl_state == `CTL_STATE_EXEC1) & (opcode == `ST)) |
+	              (dma_enable & (dma_state == `DMA_STATE_WRITE));
 
      assign dma_enable = ~((ctl_state == `CTL_STATE_FETCH0) |
 			   (ctl_state == `CTL_STATE_EXEC0 & opcode == `LD) |
@@ -88,22 +92,38 @@ module CTL(
 			        (ctl_state == `CTL_STATE_DEC1 & opcode == `LD) |
 			        (ctl_state == `CTL_STATE_EXEC0 & opcode == `ST));
 
-     always @(ctl_state, opcode, pc, alu1, alu0, dma_enable, dma_state, dma_raddr, dma_waddr, dma_reg)
+     always @(ctl_state, opcode, pc, alu1, alu0, dma_enable, dma_enable_next, dma_state, dma_raddr, dma_waddr, dma_reg)
        begin
+
           if (ctl_state == `CTL_STATE_FETCH0)
 		  sram_ADDR <= pc;
+
 	  if ((ctl_state == `CTL_STATE_EXEC0) & (opcode == `LD))
 		  sram_ADDR <= alu1;
+
 	  if ((ctl_state == `CTL_STATE_EXEC1) & (opcode == `ST))
 	  begin
 		  sram_ADDR <= alu1;
 	          sram_DI <= alu0;
 	  end
 
+	  if(dma_enable & dma_enable_next & (dma_state == `DMA_STATE_READ))
+                  sram_ADDR <= dma_raddr;
+
+	  if(dma_enable & (dma_state == `DMA_STATE_WRITE))
+          begin
+		  sram_ADDR <= dma_waddr;
+	          sram_DI <= dma_reg;
+          end
+/*
           if (dma_enable)
           begin
 		case(dma_state)
-		    `DMA_STATE_READ: sram_ADDR <= dma_raddr;
+		    `DMA_STATE_READ:
+                    begin
+          	    	if (dma_enable_next)
+ 				sram_ADDR <= dma_raddr;
+                    end
 		    `DMA_STATE_WRITE:
                     begin
 		        sram_ADDR <= dma_waddr;
@@ -111,7 +131,8 @@ module CTL(
                     end
 		endcase
 	  end
-       end
+*/
+       end //always
 
    // synchronous instructions
    always@(posedge clk)
