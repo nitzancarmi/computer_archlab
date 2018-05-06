@@ -88,7 +88,7 @@ module CTL(
 			        (ctl_state == `CTL_STATE_DEC1 & opcode == `LD) |
 			        (ctl_state == `CTL_STATE_EXEC0 & opcode == `ST));
 
-     always @(ctl_state, opcode, pc, alu1, alu0)
+     always @(ctl_state, opcode, pc, alu1, alu0, dma_enable, dma_state, dma_raddr, dma_waddr, dma_reg)
        begin
           if (ctl_state == `CTL_STATE_FETCH0)
 		  sram_ADDR <= pc;
@@ -293,9 +293,9 @@ module CTL(
              end
 	   endcase //ctl_state
 
-           if (dma_enable)
+             if (dma_enable)
 //           if (dma_enable_o)
-           begin
+             begin
           	case(dma_state_o)
           	    `DMA_STATE_READ:
                         begin
@@ -315,11 +315,10 @@ module CTL(
           	    	dma_state <= (dma_cnt == 1) ? `DMA_STATE_IDLE : `DMA_STATE_READ;
                         end
           	endcase
-//                end
-           end
-           else begin
-	   	$fdisplay(verilog_trace_fp, "------------- No dma_enable in %0d !!! -------------", cycle_counter);
-           end
+             end
+//           else begin
+//	   	$fdisplay(verilog_trace_fp, "------------- No dma_enable in %0d !!! -------------", cycle_counter);
+//           end
 
 	end // !reset
      end // @posedge(clk)
