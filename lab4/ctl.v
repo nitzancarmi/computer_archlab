@@ -65,7 +65,7 @@ module CTL(
    reg [1:0]  dma_state;
    reg [1:0]  dma_state_o;
    wire       dma_enable;
-   reg        dma_enable_o;
+//   reg        dma_enable_o;
 //   reg        dma_start;
 
 
@@ -83,6 +83,10 @@ module CTL(
      assign dma_enable = ~((ctl_state == `CTL_STATE_FETCH0) |
 			   (ctl_state == `CTL_STATE_EXEC0 & opcode == `LD) |
 			   (ctl_state == `CTL_STATE_EXEC1 & opcode == `ST));
+
+     assign dma_enable_next = ~(((ctl_state == `CTL_STATE_EXEC1) | (ctl_state == `CTL_STATE_IDLE & start)) |
+			        (ctl_state == `CTL_STATE_DEC1 & opcode == `LD) |
+			        (ctl_state == `CTL_STATE_EXEC0 & opcode == `ST));
 
      always @(ctl_state, opcode, pc, alu1, alu0)
        begin
@@ -112,7 +116,7 @@ module CTL(
    // synchronous instructions
    always@(posedge clk)
      begin
-        dma_enable_o = dma_enable;
+//        dma_enable_o = dma_enable;
         dma_state_o = dma_state;
 
 	if (reset) begin
@@ -144,7 +148,7 @@ module CTL(
 	   dma_cnt <= 0;
 	   dma_state <= 0;
 	   dma_state_o <= 0;
-	   dma_enable_o <= 0;
+//	   dma_enable_o <= 0;
 //           dma_start <= 0;
 	   
 	end else begin
@@ -289,12 +293,13 @@ module CTL(
              end
 	   endcase //ctl_state
 
-           if (dma_enable_o)
+           if (dma_enable)
+//           if (dma_enable_o)
            begin
           	case(dma_state_o)
           	    `DMA_STATE_READ:
                         begin
-          	    	if (dma_enable)
+          	    	if (dma_enable_next)
           	    		dma_state <= `DMA_STATE_SAMPLE;
                         end
           	    `DMA_STATE_SAMPLE:
@@ -311,6 +316,9 @@ module CTL(
                         end
           	endcase
 //                end
+           end
+           else begin
+	   	$fdisplay(verilog_trace_fp, "------------- No dma_enable in %0d !!! -------------", cycle_counter);
            end
 
 	end // !reset
