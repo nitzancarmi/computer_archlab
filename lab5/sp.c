@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
@@ -121,11 +122,12 @@ static void sp_reset(sp_t *sp)
 #define JIN 20
 #define HLT 24
 
+/*
 static char opcode_name[32][4] = {"ADD", "SUB", "LSF", "RSF", "AND", "OR", "XOR", "LHI",
 				 "LD", "ST", "U", "U", "U", "U", "U", "U",
 				 "JLT", "JLE", "JEQ", "JNE", "JIN", "U", "U", "U",
 				 "HLT", "U", "U", "U", "U", "U", "U", "U"};
-
+*/
 static void dump_sram(sp_t *sp, char *name, llsim_memory_t *sram)
 {
 	FILE *fp;
@@ -161,15 +163,16 @@ const char* opcode_tostring(int opc)
 	   case JNE: return "JNE";
 	   case JIN: return "JIN";
 	   case HLT: return "HLT";
-
+/*
 	   case DMA: return "DMA";
 	   case POL: return "POL";
+*/
 	}
 
 	return "UNKNOWN";
 }
 
-void dump_inst_trace_fp(sp_registers_t *spro, sp_registers_t *sprn)
+void dump_inst_trace(sp_registers_t *spro, sp_registers_t *sprn)
 {
 	fprintf(inst_trace_fp, "--- instruction %d (%04x) @ PC %d (%04x) -----------------------------------------------------------\n",
 		inst_cnt, inst_cnt, spro->exec1_pc - 1, spro->exec1_pc - 1);
@@ -252,7 +255,7 @@ static void sp_ctl(sp_t *sp)
 	sp_registers_t *spro = sp->spro;
 	sp_registers_t *sprn = sp->sprn;
 	int i;
-	int opcode, dst, src0, src1;
+	int opcode, dst, src0, src1, immediate;
 
 	fprintf(cycle_trace_fp, "cycle %d\n", spro->cycle_counter);
 	fprintf(cycle_trace_fp, "cycle_counter %08x\n", spro->cycle_counter);
@@ -319,7 +322,7 @@ static void sp_ctl(sp_t *sp)
 	// fetch0
 	sprn->fetch1_active = 0;
 	if (spro->fetch0_active) {
-		llsim_mem_read(sp->srami, spro->pc);
+		llsim_mem_read(sp->srami, spro->fetch0_pc);
 
 		sprn->fetch1_active = 1;
 		sprn->fetch1_pc = spro->fetch0_pc;
@@ -341,8 +344,9 @@ static void sp_ctl(sp_t *sp)
 		dst = (spro->dec0_inst >> 22) & 7;
 		src0 = (spro->dec0_inst >> 19) & 7;
 		src1 = (spro->dec0_inst >> 16) & 7;
+		immediate = spro->dec0_inst & 0xffff;
 
-		sprn->dec1_pc = (is_jump_inst(opcode) & spro->jtaken) ? spro->dec0_immediate : spro->dec0_pc + 1;
+		sprn->dec1_pc = (is_jump_inst(opcode) & spro->jtaken) ? immediate : spro->dec0_pc + 1;
 		sprn->dec1_opcode = opcode;
 		if (spro->r_busy[src0] || spro->r_busy[src1]) {
 			sprn->fetch0_active = 0;
@@ -352,7 +356,7 @@ static void sp_ctl(sp_t *sp)
 			sprn->dec1_dst = dst;
 			sprn->dec1_src0 = src0;
 			sprn->dec1_src1 = src1;
-			sprn->dec1_immediate = spro->dec0_inst & 0xffff;
+			sprn->dec1_immediate = immediate;
 			sprn->r_busy[dst] = 1;
 
 			sprn->fetch0_active = 1;
@@ -452,7 +456,7 @@ static void sp_ctl(sp_t *sp)
 		case HLT:
 			break;
 		default:
-			printf("Unknown opcode %d\n", spro->opcode);
+			printf("Unknown opcode %d\n", spro->exec1_opcode);
 		}
 
 		sprn->exec1_active = 1;
@@ -470,7 +474,7 @@ static void sp_ctl(sp_t *sp)
 	// exec1
 	if (spro->exec1_active) {
 
-		switch(spro->opcode) {
+		switch(spro->exec1_opcode) {
 		case ADD:
 		case SUB:
 		case LSF:
@@ -496,7 +500,7 @@ static void sp_ctl(sp_t *sp)
 		case JNE:
 		case JIN:
 			if (spro->exec1_aluout) {
-				sprn->r[7] = spro->pc - 1;
+				sprn->r[7] = spro->exec1_pc - 1;
 			}
 			if (spro->exec1_aluout != spro->jtaken) {
 				sprn->fetch0_active = 1;
@@ -505,23 +509,24 @@ static void sp_ctl(sp_t *sp)
 				sprn->dec1_active = 0;
 				sprn->exec0_active = 0;
 				sprn->exec1_active = 0;
-				sprn->pc = spro->exec1_aluout ? spro->immediate : spro->exec1_pc + 1;
+				sprn->fetch0_pc = spro->exec1_aluout ? spro->exec1_immediate : spro->exec1_pc + 1;
 			}
 
 			sprn->jtaken = spro->exec1_aluout;
 			break;
-
+/*
 		case DMA:
 			break;
 		case POL:
 			sprn->r[spro->dst] = spro->dma_cnt;
+*/
 		case HLT:
 			break;
 		default:
-			printf("Unknown opcode %d\n", spro->opcode);
+			printf("Unknown opcode %d\n", spro->exec1_opcode);
 		}
 
-		dump_inst_trace_fp(spro, sprn);
+		dump_inst_trace(spro, sprn);
 		inst_cnt++;
 
 		if (spro->exec1_opcode == HLT) {
