@@ -17,6 +17,8 @@
 int nr_simulated_instructions = 0;
 FILE *inst_trace_fp = NULL, *cycle_trace_fp = NULL;
 
+int inst_cnt = 0;
+
 typedef struct sp_registers_s {
 	// 6 32 bit registers (r[0], r[1] don't exist)
 	int r[8];
@@ -137,6 +139,99 @@ static void dump_sram(sp_t *sp, char *name, llsim_memory_t *sram)
 	for (i = 0; i < SP_SRAM_HEIGHT; i++)
 		fprintf(fp, "%08x\n", llsim_mem_extract(sram, i, 31, 0));
 	fclose(fp);
+}
+
+const char* opcode_tostring(int opc) 
+{
+	switch (opc) 
+	{
+	   case ADD: return "ADD";
+	   case SUB: return "SUB";
+	   case LSF: return "LSF";
+	   case RSF: return "RSF";
+	   case AND: return "AND";
+	   case OR: return "OR";
+	   case XOR: return "XOR";
+	   case LHI: return "LHI";
+	   case LD: return "LD";
+	   case ST: return "ST";
+	   case JLT: return "JLT";
+	   case JLE: return "JLE";
+	   case JEQ: return "JEQ";
+	   case JNE: return "JNE";
+	   case JIN: return "JIN";
+	   case HLT: return "HLT";
+
+	   case DMA: return "DMA";
+	   case POL: return "POL";
+	}
+
+	return "UNKNOWN";
+}
+
+void dump_inst_trace_fp(sp_registers_t *spro, sp_registers_t *sprn)
+{
+	fprintf(inst_trace_fp, "--- instruction %d (%04x) @ PC %d (%04x) -----------------------------------------------------------\n",
+		inst_cnt, inst_cnt, spro->exec1_pc - 1, spro->exec1_pc - 1);
+
+	fprintf(inst_trace_fp, "pc = %04x, inst = %08x, opcode = %d (%s), dst = %d, src0 = %d, src1 = %d, immediate = %08x\n",
+		spro->exec1_pc - 1, spro->exec1_inst, spro->exec1_opcode, opcode_tostring(spro->exec1_opcode), spro->exec1_dst, spro->exec1_src0, spro->exec1_src1, spro->exec1_immediate);
+
+	fprintf(inst_trace_fp, "r[0] = %08x r[1] = %08x r[2] = %08x r[3] = %08x\nr[4] = %08x r[5] = %08x r[6] = %08x r[7] = %08x\n",
+		spro->r[0],spro->r[1],spro->r[2],spro->r[3],spro->r[4],spro->r[5],spro->r[6],spro->r[7]);
+
+
+	if (spro->exec1_opcode == HLT) {
+		fprintf(inst_trace_fp, "\n>>>>EXEC: HALT at PC %04x <<<<\n",
+			sprn->exec1_pc - 1);
+		fprintf(inst_trace_fp, "sim finished at pc %d, %d instructions",
+			spro->exec1_pc - 1, inst_cnt + 1);
+		return;
+	}
+
+	switch(spro->exec1_opcode) {
+	case ADD:
+	case SUB:
+	case LSF:
+	case RSF:
+	case AND:
+	case OR:
+	case XOR:
+	case LHI:
+		fprintf(inst_trace_fp, "\n>>>>EXEC: R[%d] = %d %s %d <<<<\n\n",
+			sprn->exec1_dst, sprn->r[spro->exec1_dst], opcode_tostring(sprn->exec1_opcode), sprn->exec1_opcode);
+		break;
+	case LD:
+		fprintf(inst_trace_fp, "\n>>>>EXEC: R[%d] = MEM[%d] = %08x <<<<\n\n",
+			sprn->exec1_dst, sprn->r[sprn->exec1_src1], sprn->r[spro->exec1_dst]);
+		break;
+	case ST:
+		fprintf(inst_trace_fp, "\n>>>>EXEC: MEM[%d] = %08x %s %d <<<<\n\n",
+			sprn->exec1_alu1, sprn->exec1_alu0, "ST", sprn->exec1_opcode);
+		break;
+
+	case JLT:
+	case JLE:
+	case JEQ:
+	case JNE:
+	case JIN:
+		fprintf(inst_trace_fp, "\n>>>>EXEC: %s %d, %d, %d <<<<\n\n",
+			opcode_tostring(sprn->exec1_opcode), sprn->exec1_alu0, sprn->exec1_alu1, sprn->exec1_pc);
+		break;
+/*
+	case POL:
+		fprintf(inst_trace_fp, "\n>>>>EXEC: R[%d] = %d %s %d <<<<\n\n",
+			sprn->dst, sprn->dma_cnt, opcode_tostring(sprn->opcode), sprn->opcode);
+		break;
+	case DMA:
+		fprintf(inst_trace_fp, "\n>>>>EXEC: %s Read = %d, Write = %d, count = %d <<<<\n\n",
+			opcode_tostring(sprn->opcode), sprn->dma_raddr, sprn->dma_waddr, sprn->dma_cnt);
+		break;
+*/
+
+	default:
+		printf("Unknown opcode\n");
+	}
 }
 
 static int is_jump_inst(int opcode) {
@@ -426,9 +521,9 @@ static void sp_ctl(sp_t *sp)
 			printf("Unknown opcode %d\n", spro->opcode);
 		}
 
+		dump_inst_trace_fp(spro, sprn);
+		inst_cnt++;
 
-
-		// FILL HERE
 		if (spro->exec1_opcode == HLT) {
 			llsim_stop();
 			sprn->fetch0_active = 0;
@@ -502,7 +597,7 @@ void sp_init(char *program_name)
 
 	inst_trace_fp = fopen("inst_trace.txt", "w");
 	if (inst_trace_fp == NULL) {
-		printf("couldn't open file inst_trace.txt\n");
+		printf("couldn't open file inst_trace_fp.txt\n");
 		exit(1);
 	}
 
