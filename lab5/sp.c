@@ -260,7 +260,6 @@ static void sp_ctl(sp_t *sp)
 	int opcode, dst, src0, src1, immediate;
 
 	fprintf(cycle_trace_fp, "cycle %d\n", spro->cycle_counter);
-	printf("cycle %d\n", spro->cycle_counter);
 	fprintf(cycle_trace_fp, "cycle_counter %08x\n", spro->cycle_counter);
 	for (i = 2; i <= 7; i++)
 		fprintf(cycle_trace_fp, "r%d %08x\n", i, spro->r[i]);
@@ -325,7 +324,6 @@ static void sp_ctl(sp_t *sp)
 	// fetch0
 	sprn->fetch1_active = 0;
 	if (spro->fetch0_active) {
-		printf("llsin_mem_read in fetch0\n");
 		llsim_mem_read(sp->srami, spro->fetch0_pc);
 
 		sprn->fetch1_active = 1;
@@ -354,7 +352,6 @@ static void sp_ctl(sp_t *sp)
 
 		if (sp->start)
 			sp->start = 0;
-//		printf("next PC: %d\n", sprn->fetch0_pc);
 		sprn->dec1_opcode = opcode;
 		if (spro->r_busy[src0] || spro->r_busy[src1]) {
 			sprn->bubble = true;
@@ -365,11 +362,9 @@ static void sp_ctl(sp_t *sp)
 			sprn->dec0_inst = spro->dec0_inst;
 			sprn->dec0_pc = spro->dec0_pc;
 			sprn->fetch1_pc = spro->fetch1_pc;
-//			sprn->fetch0_pc = spro->fetch1_pc;
 		} else {
 			if (spro->bubble) {
 				sprn->dec0_inst = 0;
-				printf("llsin_mem_read in dec0\n");
 				llsim_mem_read(sp->srami, spro->fetch1_pc);
 				sprn->bubble = false;
 				sprn->fetch0_pc = spro->fetch0_pc;
@@ -388,11 +383,15 @@ static void sp_ctl(sp_t *sp)
 			}
 
 			sprn->fetch0_active = 1;
-			sprn->fetch1_active = 1;
-			sprn->dec0_active = 1;
+			if (is_jump_inst(opcode) & spro->jtaken) {
+				sprn->fetch1_active = 0;
+				sprn->dec0_active = 0;
+			} else {
+				sprn->fetch1_active = 1;
+				sprn->dec0_active = 1;
+			}
 			sprn->dec1_active = 1;
 
-			printf("dec0_pc %d!\n", spro->dec0_pc);
 			sprn->dec1_pc = spro->dec0_pc;
 			sprn->dec1_inst = spro->dec0_inst;
 		}
@@ -538,6 +537,9 @@ static void sp_ctl(sp_t *sp)
 				sprn->dec1_active = 0;
 				sprn->exec0_active = 0;
 				sprn->exec1_active = 0;
+				sp->start = 1;
+				for(i = 0; i < 8; i++)
+					sprn->r_busy[i] = 0;
 				sprn->fetch0_pc = spro->exec1_aluout ? spro->exec1_immediate : spro->exec1_pc + 1;
 			}
 
