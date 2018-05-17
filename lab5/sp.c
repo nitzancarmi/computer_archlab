@@ -277,7 +277,6 @@ static void sp_ctl(sp_t *sp)
 	int opcode, dst, src0, src1, immediate;
 
 	fprintf(cycle_trace_fp, "cycle %d\n", spro->cycle_counter);
-	printf("cycle %d\n", spro->cycle_counter);
 	fprintf(cycle_trace_fp, "cycle_counter %08x\n", spro->cycle_counter);
 	for (i = 2; i <= 7; i++)
 		fprintf(cycle_trace_fp, "r%d %08x\n", i, spro->r[i]);
@@ -385,11 +384,9 @@ static void sp_ctl(sp_t *sp)
 		} else {
 			if (spro->bubble) {
 				sprn->dec0_inst = 0;
-				printf("Read from bubble\n");
 				llsim_mem_read(sp->srami, spro->fetch1_pc);
 				sprn->bubble = false;
 				sprn->fetch0_pc = spro->fetch0_pc;
-				printf("%d: advance pc from %d to %d\n", __LINE__, spro->fetch0_pc, sprn->fetch0_pc);
 			} else {
 
 				if (is_jump_inst(opcode) & spro->jtaken) {
@@ -399,8 +396,6 @@ static void sp_ctl(sp_t *sp)
 					sprn->fetch0_pc = spro->fetch0_pc + 1;
 				}
 
-//				sprn->fetch0_pc = (is_jump_inst(opcode) & spro->jtaken) ? immediate : spro->fetch0_pc + 1;
-				printf("%d: advance pc from %d to %d\n", __LINE__, spro->fetch0_pc, sprn->fetch0_pc);
 			}
 			sprn->dec1_dst = dst;
 			sprn->dec1_src0 = src0;
@@ -573,7 +568,6 @@ static void sp_ctl(sp_t *sp)
 				for(i = 0; i < 8; i++)
 					sprn->r_busy[i] = 0;
 				sprn->fetch0_pc = spro->exec1_aluout ? spro->exec1_immediate : spro->exec1_pc + 1;
-				printf("%d: advance pc from %d to %d\n", __LINE__, spro->fetch0_pc, sprn->fetch0_pc);
 			}
 
 			sprn->jtaken = spro->exec1_aluout;
@@ -697,7 +691,7 @@ void sp_init(char *program_name)
 	llsim_unit_registers_t *llsim_ur;
 	sp_t *sp;
 
-	llsim_printf("initializing sp unit\n");
+//	llsim_printf("initializing sp unit\n");
 
 	inst_trace_fp = fopen("inst_trace.txt", "w");
 	if (inst_trace_fp == NULL) {
