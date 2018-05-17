@@ -204,7 +204,7 @@ void dump_inst_trace(sp_registers_t *spro, sp_registers_t *sprn)
 
 	if (spro->exec1_opcode == HLT) {
 		fprintf(inst_trace_fp, "\n>>>>EXEC: HALT at PC %04x <<<<\n",
-			sprn->exec1_pc);
+			sprn->exec1_pc - 1);
 		fprintf(inst_trace_fp, "sim finished at pc %d, %d instructions",
 			spro->exec1_pc, inst_cnt + 1);
 		return;
@@ -291,6 +291,7 @@ static void sp_ctl(sp_t *sp)
 	fprintf(cycle_trace_fp, "dec0_active %08x\n", spro->dec0_active);
 	fprintf(cycle_trace_fp, "dec0_pc %08x\n", spro->dec0_pc);
 	fprintf(cycle_trace_fp, "dec0_inst %08x\n", spro->dec0_inst); // 32 bits
+	fprintf(cycle_trace_fp, "bubble %08x\n", spro->bubble); // 32 bits
 
 	fprintf(cycle_trace_fp, "dec1_active %08x\n", spro->dec1_active);
 	fprintf(cycle_trace_fp, "dec1_pc %08x\n", spro->dec1_pc); // 16 bits
@@ -390,15 +391,15 @@ static void sp_ctl(sp_t *sp)
 				sprn->fetch0_pc = spro->fetch0_pc;
 				printf("%d: advance pc from %d to %d\n", __LINE__, spro->fetch0_pc, sprn->fetch0_pc);
 			} else {
-/*
+
 				if (is_jump_inst(opcode) & spro->jtaken) {
 					sprn->fetch0_pc = immediate;
 					sp->start = 1;
 				} else {
 					sprn->fetch0_pc = spro->fetch0_pc + 1;
 				}
-*/
-				sprn->fetch0_pc = (is_jump_inst(opcode) & spro->jtaken) ? immediate : spro->fetch0_pc + 1;
+
+//				sprn->fetch0_pc = (is_jump_inst(opcode) & spro->jtaken) ? immediate : spro->fetch0_pc + 1;
 				printf("%d: advance pc from %d to %d\n", __LINE__, spro->fetch0_pc, sprn->fetch0_pc);
 			}
 			sprn->dec1_dst = dst;
@@ -568,6 +569,7 @@ static void sp_ctl(sp_t *sp)
 				sprn->exec0_active = 0;
 				sprn->exec1_active = 0;
 				sp->start = 1;
+				sprn->bubble = 0;
 				for(i = 0; i < 8; i++)
 					sprn->r_busy[i] = 0;
 				sprn->fetch0_pc = spro->exec1_aluout ? spro->exec1_immediate : spro->exec1_pc + 1;
