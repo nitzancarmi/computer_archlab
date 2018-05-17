@@ -266,13 +266,13 @@ void llsim_run_clock(void)
 			if (mem->read) {
 				llsim_assert(mem->read_addr < mem->height, "mem %s read address %d out of range\n", mem->name, mem->read_addr);
 				*mem->dataout = mem->data[mem->read_addr];
-				llsim_printf("llsim: clock %d: READ MEM %s addr %d --> %08x\n", llsim->clock, mem->name, mem->read_addr, *mem->dataout);
+//				llsim_printf("llsim: clock %d: READ MEM %s addr %d --> %08x\n", llsim->clock, mem->name, mem->read_addr, *mem->dataout);
 				mem->read = 0;
 			}
 			if (mem->write) {
 				llsim_assert(mem->write_addr < mem->height, "mem %s write address %d out of range\n", mem->name, mem->write_addr);
 				mem->data[mem->write_addr] = *mem->datain;
-				llsim_printf("llsim: clock %d: WRITE %08x --> MEM %s addr %d\n", llsim->clock, *mem->datain, mem->name, mem->write_addr);
+//				llsim_printf("llsim: clock %d: WRITE %08x --> MEM %s addr %d\n", llsim->clock, *mem->datain, mem->name, mem->write_addr);
 				mem->write = 0;
 			}
 			llsim_assert(!(read_done && write_done), "ERROR: simultaneous access to memory %s", mem->name);
@@ -340,7 +340,7 @@ int main(int argc, char **argv)
 
 	llsim_init(argv[1]);
 
-	llsim_printf("llsim: starting simulation\n");
+//	llsim_printf("llsim: starting simulation\n");
 	llsim->reset = 1;
 
 	// init registers
@@ -352,7 +352,7 @@ int main(int argc, char **argv)
 	}
 	llsim->reset = 0;
 	while (!stop_sim) {
-		printf(">>>>> clock %d <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n", llsim->clock);
+//		printf(">>>>> clock %d <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n", llsim->clock);
 		llsim_run_clock();
 		llsim->clock++;
 		/*

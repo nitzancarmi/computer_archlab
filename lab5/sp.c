@@ -24,6 +24,7 @@ typedef struct sp_registers_s {
 	// 6 32 bit registers (r[0], r[1] don't exist)
 	int r[8];
 	int r_busy[8];
+	int bubble;
 
 	int jtaken;
 
@@ -175,10 +176,10 @@ const char* opcode_tostring(int opc)
 void dump_inst_trace(sp_registers_t *spro, sp_registers_t *sprn)
 {
 	fprintf(inst_trace_fp, "--- instruction %d (%04x) @ PC %d (%04x) -----------------------------------------------------------\n",
-		inst_cnt, inst_cnt, spro->exec1_pc - 1, spro->exec1_pc - 1);
+		inst_cnt, inst_cnt, spro->exec1_pc, spro->exec1_pc);
 
 	fprintf(inst_trace_fp, "pc = %04x, inst = %08x, opcode = %d (%s), dst = %d, src0 = %d, src1 = %d, immediate = %08x\n",
-		spro->exec1_pc - 1, spro->exec1_inst, spro->exec1_opcode, opcode_tostring(spro->exec1_opcode), spro->exec1_dst, spro->exec1_src0, spro->exec1_src1, spro->exec1_immediate);
+		spro->exec1_pc, spro->exec1_inst, spro->exec1_opcode, opcode_tostring(spro->exec1_opcode), spro->exec1_dst, spro->exec1_src0, spro->exec1_src1, spro->exec1_immediate);
 
 	fprintf(inst_trace_fp, "r[0] = %08x r[1] = %08x r[2] = %08x r[3] = %08x\nr[4] = %08x r[5] = %08x r[6] = %08x r[7] = %08x\n",
 		spro->r[0],spro->r[1],spro->r[2],spro->r[3],spro->r[4],spro->r[5],spro->r[6],spro->r[7]);
@@ -186,9 +187,9 @@ void dump_inst_trace(sp_registers_t *spro, sp_registers_t *sprn)
 
 	if (spro->exec1_opcode == HLT) {
 		fprintf(inst_trace_fp, "\n>>>>EXEC: HALT at PC %04x <<<<\n",
-			sprn->exec1_pc - 1);
+			sprn->exec1_pc);
 		fprintf(inst_trace_fp, "sim finished at pc %d, %d instructions",
-			spro->exec1_pc - 1, inst_cnt + 1);
+			spro->exec1_pc, inst_cnt + 1);
 		return;
 	}
 
@@ -202,15 +203,15 @@ void dump_inst_trace(sp_registers_t *spro, sp_registers_t *sprn)
 	case XOR:
 	case LHI:
 		fprintf(inst_trace_fp, "\n>>>>EXEC: R[%d] = %d %s %d <<<<\n\n",
-			sprn->exec1_dst, sprn->r[spro->exec1_dst], opcode_tostring(sprn->exec1_opcode), sprn->exec1_opcode);
+			spro->exec1_dst, sprn->r[spro->exec1_dst], opcode_tostring(spro->exec1_opcode), spro->exec1_opcode);
 		break;
 	case LD:
 		fprintf(inst_trace_fp, "\n>>>>EXEC: R[%d] = MEM[%d] = %08x <<<<\n\n",
-			sprn->exec1_dst, sprn->r[sprn->exec1_src1], sprn->r[spro->exec1_dst]);
+			spro->exec1_dst, sprn->r[spro->exec1_src1], sprn->r[spro->exec1_dst]);
 		break;
 	case ST:
 		fprintf(inst_trace_fp, "\n>>>>EXEC: MEM[%d] = %08x %s %d <<<<\n\n",
-			sprn->exec1_alu1, sprn->exec1_alu0, "ST", sprn->exec1_opcode);
+			spro->exec1_alu1, spro->exec1_alu0, "ST", spro->exec1_opcode);
 		break;
 
 	case JLT:
@@ -219,7 +220,8 @@ void dump_inst_trace(sp_registers_t *spro, sp_registers_t *sprn)
 	case JNE:
 	case JIN:
 		fprintf(inst_trace_fp, "\n>>>>EXEC: %s %d, %d, %d <<<<\n\n",
-			opcode_tostring(sprn->exec1_opcode), sprn->exec1_alu0, sprn->exec1_alu1, sprn->exec1_pc);
+			opcode_tostring(spro->exec1_opcode), spro->exec1_alu0, spro->exec1_alu1,
+				spro->exec1_aluout ? spro->exec1_immediate : spro->exec1_pc + 1);
 		break;
 /*
 	case POL:
@@ -258,6 +260,7 @@ static void sp_ctl(sp_t *sp)
 	int opcode, dst, src0, src1, immediate;
 
 	fprintf(cycle_trace_fp, "cycle %d\n", spro->cycle_counter);
+	printf("cycle %d\n", spro->cycle_counter);
 	fprintf(cycle_trace_fp, "cycle_counter %08x\n", spro->cycle_counter);
 	for (i = 2; i <= 7; i++)
 		fprintf(cycle_trace_fp, "r%d %08x\n", i, spro->r[i]);
@@ -306,13 +309,13 @@ static void sp_ctl(sp_t *sp)
 
 	fprintf(cycle_trace_fp, "\n");
 
-	sp_printf("cycle_counter %08x\n", spro->cycle_counter);
-	sp_printf("r2 %08x, r3 %08x\n", spro->r[2], spro->r[3]);
-	sp_printf("r4 %08x, r5 %08x, r6 %08x, r7 %08x\n", spro->r[4], spro->r[5], spro->r[6], spro->r[7]);
-	sp_printf("fetch0_active %d, fetch1_active %d, dec0_active %d, dec1_active %d, exec0_active %d, exec1_active %d\n",
-		  spro->fetch0_active, spro->fetch1_active, spro->dec0_active, spro->dec1_active, spro->exec0_active, spro->exec1_active);
-	sp_printf("fetch0_pc %d, fetch1_pc %d, dec0_pc %d, dec1_pc %d, exec0_pc %d, exec1_pc %d\n",
-		  spro->fetch0_pc, spro->fetch1_pc, spro->dec0_pc, spro->dec1_pc, spro->exec0_pc, spro->exec1_pc);
+//	sp_printf("cycle_counter %08x\n", spro->cycle_counter);
+//	sp_printf("r2 %08x, r3 %08x\n", spro->r[2], spro->r[3]);
+//	sp_printf("r4 %08x, r5 %08x, r6 %08x, r7 %08x\n", spro->r[4], spro->r[5], spro->r[6], spro->r[7]);
+//	sp_printf("fetch0_active %d, fetch1_active %d, dec0_active %d, dec1_active %d, exec0_active %d, exec1_active %d\n",
+//		  spro->fetch0_active, spro->fetch1_active, spro->dec0_active, spro->dec1_active, spro->exec0_active, spro->exec1_active);
+//	sp_printf("fetch0_pc %d, fetch1_pc %d, dec0_pc %d, dec1_pc %d, exec0_pc %d, exec1_pc %d\n",
+//		  spro->fetch0_pc, spro->fetch1_pc, spro->dec0_pc, spro->dec1_pc, spro->exec0_pc, spro->exec1_pc);
 
 	sprn->cycle_counter = spro->cycle_counter + 1;
 
@@ -322,10 +325,13 @@ static void sp_ctl(sp_t *sp)
 	// fetch0
 	sprn->fetch1_active = 0;
 	if (spro->fetch0_active) {
+		printf("llsin_mem_read in fetch0\n");
 		llsim_mem_read(sp->srami, spro->fetch0_pc);
 
 		sprn->fetch1_active = 1;
 		sprn->fetch1_pc = spro->fetch0_pc;
+		if (sp->start)
+			sprn->fetch0_pc++;
 	}
 
 	// fetch1
@@ -346,24 +352,47 @@ static void sp_ctl(sp_t *sp)
 		src1 = (spro->dec0_inst >> 16) & 7;
 		immediate = spro->dec0_inst & 0xffff;
 
-		sprn->dec1_pc = (is_jump_inst(opcode) & spro->jtaken) ? immediate : spro->dec0_pc + 1;
+		if (sp->start)
+			sp->start = 0;
+//		printf("next PC: %d\n", sprn->fetch0_pc);
 		sprn->dec1_opcode = opcode;
 		if (spro->r_busy[src0] || spro->r_busy[src1]) {
+			sprn->bubble = true;
 			sprn->fetch0_active = 0;
 			sprn->fetch1_active = 0;
 			sprn->dec0_active = 1;
+			//we already fetched new instruction, we have to undo it
+			sprn->dec0_inst = spro->dec0_inst;
+			sprn->dec0_pc = spro->dec0_pc;
+			sprn->fetch1_pc = spro->fetch1_pc;
+//			sprn->fetch0_pc = spro->fetch1_pc;
 		} else {
+			if (spro->bubble) {
+				sprn->dec0_inst = 0;
+				printf("llsin_mem_read in dec0\n");
+				llsim_mem_read(sp->srami, spro->fetch1_pc);
+				sprn->bubble = false;
+				sprn->fetch0_pc = spro->fetch0_pc;
+			} else {
+				sprn->fetch0_pc = (is_jump_inst(opcode) & spro->jtaken) ? immediate : spro->fetch0_pc + 1;
+			}
 			sprn->dec1_dst = dst;
 			sprn->dec1_src0 = src0;
 			sprn->dec1_src1 = src1;
 			sprn->dec1_immediate = immediate;
-			sprn->r_busy[dst] = 1;
+			sprn->r_busy[dst] = (dst != 0);
+			if ((spro->dec0_inst != 0) && (dst == 0) &&
+			    !(is_jump_inst(opcode) || opcode == ST || opcode == HLT)) {
+				printf("Cannot write to R[0], exiting... dec0_inst %x dst %d\n", spro->dec0_inst, dst);
+				exit(1);
+			}
 
 			sprn->fetch0_active = 1;
 			sprn->fetch1_active = 1;
 			sprn->dec0_active = 1;
 			sprn->dec1_active = 1;
 
+			printf("dec0_pc %d!\n", spro->dec0_pc);
 			sprn->dec1_pc = spro->dec0_pc;
 			sprn->dec1_inst = spro->dec0_inst;
 		}
@@ -500,7 +529,7 @@ static void sp_ctl(sp_t *sp)
 		case JNE:
 		case JIN:
 			if (spro->exec1_aluout) {
-				sprn->r[7] = spro->exec1_pc - 1;
+				sprn->r[7] = spro->exec1_pc;
 			}
 			if (spro->exec1_aluout != spro->jtaken) {
 				sprn->fetch0_active = 1;
@@ -526,8 +555,10 @@ static void sp_ctl(sp_t *sp)
 			printf("Unknown opcode %d\n", spro->exec1_opcode);
 		}
 
-		dump_inst_trace(spro, sprn);
-		inst_cnt++;
+		if (spro->exec1_inst != 0) {
+			dump_inst_trace(spro, sprn);
+			inst_cnt++;
+		}
 
 		if (spro->exec1_opcode == HLT) {
 			llsim_stop();
