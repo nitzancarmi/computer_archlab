@@ -198,7 +198,7 @@ void dump_inst_trace(sp_registers_t *spro, sp_registers_t *sprn)
 		spro->exec1_pc, spro->exec1_inst, spro->exec1_opcode, opcode_tostring(spro->exec1_opcode), spro->exec1_dst, spro->exec1_src0, spro->exec1_src1, spro->exec1_immediate);
 
 	fprintf(inst_trace_fp, "r[0] = %08x r[1] = %08x r[2] = %08x r[3] = %08x\nr[4] = %08x r[5] = %08x r[6] = %08x r[7] = %08x\n",
-		spro->r[0],spro->r[1],spro->r[2],spro->r[3],spro->r[4],spro->r[5],spro->r[6],spro->r[7]);
+		spro->r[0],spro->exec1_immediate,spro->r[2],spro->r[3],spro->r[4],spro->r[5],spro->r[6],spro->r[7]);
 
 
 	if (spro->exec1_opcode == HLT) {
@@ -223,7 +223,7 @@ void dump_inst_trace(sp_registers_t *spro, sp_registers_t *sprn)
 		break;
 	case LD:
 		fprintf(inst_trace_fp, "\n>>>>EXEC: R[%d] = MEM[%d] = %08x <<<<\n\n",
-			spro->exec1_dst, sprn->r[spro->exec1_src1], sprn->r[spro->exec1_dst]);
+			spro->exec1_dst, (spro->exec1_src1 == 1) ? spro->exec1_immediate : sprn->r[spro->exec1_src1], sprn->r[spro->exec1_dst]);
 		break;
 	case ST:
 		fprintf(inst_trace_fp, "\n>>>>EXEC: MEM[%d] = %08x %s %d <<<<\n\n",
@@ -686,7 +686,7 @@ static void sp_generate_sram_memory_image(sp_t *sp, char *program_name)
         }
 	sp->memory_image_size = addr;
 
-        fprintf(inst_trace_fp, "program %s loaded, %d lines\n", program_name, addr);
+//        fprintf(inst_trace_fp, "program %s loaded, %d lines\n", program_name, addr);
 
 	for (i = 0; i < sp->memory_image_size; i++) {
 		llsim_mem_inject(sp->srami, i, sp->memory_image[i], 31, 0);
